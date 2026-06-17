@@ -5,7 +5,8 @@ import { ProductScene } from "@/components/ui/ProductScene";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { addOns, getMenuItem, menuItems } from "@/lib/data";
 import { getProductTheme } from "@/lib/product-themes";
-import { orderingLink } from "@/lib/site";
+import { getProductCopy } from "@/lib/product-copy";
+import { orderingLink, isExternalUrl, siteConfig } from "@/lib/site";
 import { formatPrice } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -18,9 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getMenuItem(slug);
   if (!item) return { title: "Producto" };
+  const copy = getProductCopy(item.id, item.name);
   return {
     title: item.name,
-    description: `${item.name} — ${item.ingredients.join(", ")}`,
+    description: copy.description,
+    alternates: { canonical: `/menu/${item.id}` },
+    openGraph: {
+      images: item.image ? [{ url: item.image }] : undefined,
+    },
   };
 }
 
@@ -29,14 +35,14 @@ export default async function ProductPage({ params }: Props) {
   const item = getMenuItem(slug);
   if (!item) notFound();
   const theme = getProductTheme(item.id, item.tier);
+  const copy = getProductCopy(item.id, item.name);
 
   return (
-    <div className="pt-28">
+    <div className="pt-24 md:pt-28">
       <SectionShell
         className="mesh-luxury"
         eyebrow={theme.scene}
         title={item.name}
-        subtitle={`${item.category} · ${item.label} — Una experiencia cinematográfica única, creada con ingredientes premium y la energía tropical de Açaí Factory.`}
       >
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div className="shadow-floating overflow-hidden rounded-[2rem]">
@@ -50,11 +56,21 @@ export default async function ProductPage({ params }: Props) {
             />
           </div>
           <div>
-            <div className="flex flex-wrap gap-2">
+            <p className="eyebrow-luxury">{item.category} · {item.label}</p>
+            <p className="mt-5 font-display text-lg font-medium leading-relaxed text-soft-ink">
+              {copy.description}
+            </p>
+            {copy.note && (
+              <p className="mt-3 rounded-xl bg-gradient-to-r from-magenta/10 to-yellow/10 px-4 py-3 font-display text-sm font-semibold text-magenta">
+                {copy.note}
+              </p>
+            )}
+
+            <div className="mt-6 flex flex-wrap gap-2">
               {[theme.primary, theme.secondary, theme.tertiary].map((color) => (
                 <span
                   key={color}
-                  className="h-8 w-8 rounded-full shadow-contact ring-2 ring-white"
+                  className="h-9 w-9 rounded-full shadow-contact ring-2 ring-white"
                   style={{ background: color }}
                 />
               ))}
@@ -65,9 +81,7 @@ export default async function ProductPage({ params }: Props) {
                 <div
                   key={size}
                   className="rounded-2xl px-5 py-4 shadow-elevated"
-                  style={{
-                    background: `linear-gradient(135deg, white, ${theme.primary}12)`,
-                  }}
+                  style={{ background: `linear-gradient(135deg, white, ${theme.primary}12)` }}
                 >
                   <p className="text-xs font-bold uppercase text-soft-ink">{size}</p>
                   <p className="font-luxury text-3xl font-bold text-ink">
@@ -112,9 +126,14 @@ export default async function ProductPage({ params }: Props) {
             )}
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button href={orderingLink(item.id)}>Add to Bag</Button>
+              <Button
+                href={orderingLink(item.id)}
+                external={isExternalUrl(siteConfig.orderingUrl)}
+              >
+                ADD TO BAG
+              </Button>
               <Button variant="secondary" href="/menu">
-                Back to Menu
+                BACK TO MENU
               </Button>
             </div>
           </div>

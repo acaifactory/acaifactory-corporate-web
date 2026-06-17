@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Promotion } from "@/lib/data";
+import { orderingLink, isExternalUrl, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const accents = {
@@ -8,7 +9,31 @@ const accents = {
   purple: "from-purple/12 via-white to-purple/5",
 } as const;
 
+function promoHref(promo: Promotion) {
+  switch (promo.id) {
+    case "rewards-offers":
+      return "/rewards";
+    case "app-exclusive":
+      return "/app";
+    case "acai-of-the-month":
+      return "/menu/cherries-earthquake";
+    case "tuesday-specials":
+    case "limited-time-bowls":
+      return "/menu";
+    default:
+      return "/promotions";
+  }
+}
+
+function promoCta(promo: Promotion) {
+  if (promo.cta === "ORDER NOW") return { href: orderingLink(), external: isExternalUrl(siteConfig.orderingUrl) };
+  if (promo.cta === "DOWNLOAD APP") return { href: "/app", external: false };
+  return { href: promoHref(promo), external: false };
+}
+
 export function PromoCard({ promo }: { promo: Promotion }) {
+  const cta = promoCta(promo);
+
   return (
     <article
       className={cn(
@@ -31,13 +56,9 @@ export function PromoCard({ promo }: { promo: Promotion }) {
           {promo.description}
         </p>
         <Link
-          href={
-            promo.id === "rewards-offers"
-              ? "/rewards"
-              : promo.id === "app-exclusive"
-                ? "/app"
-                : "/promotions"
-          }
+          href={cta.href}
+          target={cta.external ? "_blank" : undefined}
+          rel={cta.external ? "noopener noreferrer" : undefined}
           className="mt-7 inline-flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-magenta transition-all hover:gap-3 hover:text-magenta-hot"
         >
           {promo.cta}

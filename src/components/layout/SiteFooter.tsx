@@ -11,7 +11,9 @@ const footerGroups = [
       { href: "/menu", label: "Menú" },
       { href: "/promotions", label: "Promociones" },
       { href: "/rewards", label: "Rewards" },
-      { href: "/locations", label: "Locations" },
+      { href: "/delivery", label: "Delivery" },
+      { href: "/app", label: "App" },
+      { href: "/locations", label: "Ubicaciones" },
     ],
   },
   {
@@ -26,7 +28,7 @@ const footerGroups = [
   {
     title: "Soporte",
     links: [
-      { href: "/support", label: "Support & FAQ" },
+      { href: "/support", label: "Soporte" },
       { href: "/contact", label: "Contacto" },
       { href: "/privacy", label: "Privacidad" },
       { href: "/terms", label: "Términos" },
@@ -71,6 +73,8 @@ export function SiteFooter() {
               </a>
               <a
                 href={siteConfig.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-white/10 p-3 transition-colors hover:bg-magenta"
                 aria-label="Facebook"
               >

@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit, Allura } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { MobileOrderBar } from "@/components/layout/MobileOrderBar";
+import {
+  organizationJsonLd,
+  restaurantJsonLd,
+  localBusinessJsonLd,
+  menuJsonLd,
+  jsonLdScript,
+} from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -64,14 +72,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const schema = [
+    organizationJsonLd(),
+    restaurantJsonLd(),
+    ...localBusinessJsonLd(),
+    menuJsonLd(),
+  ];
+
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript(schema)}
+        />
+      </head>
       <body
-        className={`${body.variable} ${display.variable} ${luxury.variable} ${script.variable} antialiased`}
+        className={`${body.variable} ${display.variable} ${luxury.variable} ${script.variable} antialiased pb-20 md:pb-0`}
       >
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <MobileOrderBar />
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ export function SectionShell({
 }: {
   id?: string;
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   eyebrow?: string;
   title?: string;
   subtitle?: string;
