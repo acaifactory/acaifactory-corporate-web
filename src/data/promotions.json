@@ -1,0 +1,49 @@
+{
+  "promotions": [
+    {
+      "id": "acai-of-the-month",
+      "title": "Açaí of the Month",
+      "subtitle": "Cherries Earthquake",
+      "description": "Nuestro bowl insignia con cerezas premium, kiwi y mango. La experiencia que definió a la marca.",
+      "badge": "Featured",
+      "cta": "ORDER NOW",
+      "accent": "magenta"
+    },
+    {
+      "id": "tuesday-specials",
+      "title": "Tuesday Specials",
+      "subtitle": "Doble energía tropical",
+      "description": "Martes con sabor a Brasil: ofertas exclusivas en bowls signature y smoothies.",
+      "badge": "Weekly",
+      "cta": "VIEW DEALS",
+      "accent": "yellow"
+    },
+    {
+      "id": "rewards-offers",
+      "title": "Rewards Offers",
+      "subtitle": "90 puntos = $9 crédito",
+      "description": "Únete a Factory Rewards y desbloquea beneficios, cumpleaños y ofertas solo para miembros.",
+      "badge": "Members",
+      "cta": "JOIN NOW",
+      "accent": "purple"
+    },
+    {
+      "id": "limited-time-bowls",
+      "title": "Limited Time Bowls",
+      "subtitle": "Ediciones de temporada",
+      "description": "Bowls de edición limitada con ingredientes tropicales seleccionados. Aquí hoy, legendarios mañana.",
+      "badge": "Limited",
+      "cta": "EXPLORE",
+      "accent": "magenta"
+    },
+    {
+      "id": "app-exclusive",
+      "title": "App Exclusive Offers",
+      "subtitle": "Solo en la app",
+      "description": "Descarga la app, ordena más rápido y accede a promociones que no encontrarás en ningún otro lugar.",
+      "badge": "App Only",
+      "cta": "DOWNLOAD APP",
+      "accent": "yellow"
+    }
+  ]
+}

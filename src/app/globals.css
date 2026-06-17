@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --magenta: #ec008c;
+  --magenta-hot: #ff1493;
+  --magenta-dark: #a80062;
+  --yellow: #ffcf00;
+  --yellow-deep: #f5b700;
+  --purple: #6a1fb8;
+  --ink: #201018;
+  --soft-ink: #5e4454;
+  --cream: #fffaf5;
+  --background: #ffffff;
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-magenta: var(--magenta);
+  --color-magenta-hot: var(--magenta-hot);
+  --color-magenta-dark: var(--magenta-dark);
+  --color-yellow: var(--yellow);
+  --color-yellow-deep: var(--yellow-deep);
+  --color-purple: var(--purple);
+  --color-ink: var(--ink);
+  --color-soft-ink: var(--soft-ink);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-script: var(--font-script);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--magenta) 25%, white);
+  color: var(--ink);
+}
+
+.gradient-hero {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255, 207, 0, 0.35), transparent 22%),
+    radial-gradient(circle at 8% 85%, rgba(255, 20, 147, 0.18), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(106, 31, 184, 0.06), transparent 50%),
+    linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 8px 32px rgba(236, 0, 140, 0.08),
+    0 2px 8px rgba(32, 16, 24, 0.04);
+}
+
+.glow-magenta {
+  box-shadow:
+    0 0 0 1px rgba(236, 0, 140, 0.12),
+    0 12px 40px rgba(236, 0, 140, 0.22),
+    0 4px 16px rgba(106, 31, 184, 0.08);
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--magenta-hot), var(--purple), var(--yellow-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-elevated {
+  box-shadow:
+    0 4px 6px rgba(32, 16, 24, 0.04),
+    0 16px 48px rgba(236, 0, 140, 0.1);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-elevated:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 8px 12px rgba(32, 16, 24, 0.06),
+    0 24px 64px rgba(236, 0, 140, 0.18);
+}
+
+.section-padding {
+  padding: 5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 7rem 2.5rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-border {
+  background: linear-gradient(90deg, var(--magenta), var(--yellow), var(--purple), var(--magenta));
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}

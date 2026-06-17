@@ -1,0 +1,830 @@
+{
+  "categories": [
+    "Signature Bowls",
+    "Premium Bowls",
+    "Coco & Mango",
+    "Baby Bowls",
+    "Chia Puddings",
+    "Smoothies",
+    "Milkshakes",
+    "Frappés",
+    "Specialty Coffee"
+  ],
+  "items": [
+    {
+      "id": "cherries-earthquake",
+      "name": "Cherries Earthquake",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Official #1",
+      "image": "/images/products/cherries-earthquake.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Cherries",
+        "Kiwi",
+        "Mango"
+      ]
+    },
+    {
+      "id": "volcano-eruption",
+      "name": "Volcano Eruption",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Creamy",
+      "image": "/images/products/volcano-eruption.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Cherries",
+        "Marshmallows",
+        "Whipped Cream",
+        "Cranberries"
+      ]
+    },
+    {
+      "id": "twister-flavor",
+      "name": "Twister Flavor",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Fruit blast",
+      "image": "/images/products/twister-flavor.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Blueberries",
+        "Pineapple",
+        "Strawberries"
+      ]
+    },
+    {
+      "id": "tsunami-mango",
+      "name": "Tsunami Mango",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Mango top",
+      "image": "/images/products/tsunami-mango.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Blueberries",
+        "Kiwi",
+        "Mango"
+      ]
+    },
+    {
+      "id": "swirl-acai",
+      "name": "Swirl Açaí",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Balanced",
+      "image": "/images/products/swirl-bowl.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Kiwi",
+        "Mango",
+        "Strawberries"
+      ]
+    },
+    {
+      "id": "strawberry-storm",
+      "name": "Strawberry Storm",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Bright",
+      "image": "/images/products/strawberry-storm.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Strawberries",
+        "Kiwi"
+      ]
+    },
+    {
+      "id": "north-pole",
+      "name": "North Pole",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "Coconut",
+      "image": "/images/products/north-pole.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Coconut Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Guava",
+        "Coconut Flakes"
+      ]
+    },
+    {
+      "id": "snow-coconut",
+      "name": "Snow Coconut",
+      "category": "Signature Bowls",
+      "tier": "signature",
+      "label": "White chocolate",
+      "image": "/images/products/snow-coconut.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Coconut Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Mango",
+        "Coconut Flakes",
+        "White Chocolate Chips"
+      ]
+    },
+    {
+      "id": "tropical-summer",
+      "name": "Tropical Summer",
+      "category": "Premium Bowls",
+      "tier": "premium",
+      "label": "Premium crown",
+      "image": "/images/products/tropical-summer.webp",
+      "prices": {
+        "SM": 9.99,
+        "LG": 11.99
+      },
+      "ingredients": [
+        "Pitaya Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Mango Sorbet",
+        "Banana",
+        "Mango",
+        "Strawberries",
+        "Nutella",
+        "Coconut Flakes",
+        "Chocolate Chips"
+      ]
+    },
+    {
+      "id": "nutella-flood",
+      "name": "Nutella Flood",
+      "category": "Premium Bowls",
+      "tier": "premium",
+      "label": "Chocolate drip",
+      "image": "/images/products/nutella-flood.webp",
+      "prices": {
+        "SM": 9.99,
+        "LG": 11.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Nutella",
+        "Pineapple",
+        "Strawberries"
+      ]
+    },
+    {
+      "id": "rainstorm",
+      "name": "Rainstorm",
+      "category": "Premium Bowls",
+      "tier": "premium",
+      "label": "Pistachio",
+      "image": "/images/products/rainstorm.webp",
+      "prices": {
+        "SM": 9.99,
+        "LG": 11.99
+      },
+      "ingredients": [
+        "Açaí or Pitaya",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Strawberries",
+        "Pineapple",
+        "Blueberries",
+        "Pistachio Sauce",
+        "Coconut Flakes"
+      ]
+    },
+    {
+      "id": "lotus",
+      "name": "Lotus",
+      "category": "Premium Bowls",
+      "tier": "premium",
+      "label": "Biscoff",
+      "image": "/images/products/lotus.webp",
+      "prices": {
+        "SM": 9.99,
+        "LG": 11.99
+      },
+      "ingredients": [
+        "Açaí",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Mango",
+        "Strawberries",
+        "Marshmallow Whipped Cream",
+        "Biscoff Butter",
+        "Cookie"
+      ]
+    },
+    {
+      "id": "sunny",
+      "name": "Sunny",
+      "category": "Coco & Mango",
+      "tier": "coco",
+      "label": "Luxury",
+      "image": "/images/products/sunny-cutout.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Mango Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Cherries",
+        "Coconut Flakes",
+        "White Chocolate Sauce"
+      ]
+    },
+    {
+      "id": "mango-galaxis",
+      "name": "Mango Galaxis",
+      "category": "Coco & Mango",
+      "tier": "coco",
+      "label": "Nutella",
+      "image": "/images/products/mango-galaxis.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Mango Sorbet",
+        "Coconut Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Strawberries",
+        "Nutella"
+      ]
+    },
+    {
+      "id": "mango-eclipse",
+      "name": "Mango Eclipse",
+      "category": "Coco & Mango",
+      "tier": "coco",
+      "label": "Coconut glow",
+      "image": "/images/products/mango-eclipse.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Mango Sorbet",
+        "Coconut Oil",
+        "Granola",
+        "Banana",
+        "Strawberries",
+        "Coconut Flakes"
+      ]
+    },
+    {
+      "id": "iceberg",
+      "name": "Iceberg",
+      "category": "Coco & Mango",
+      "tier": "coco",
+      "label": "Chia layer",
+      "image": "/images/products/iceberg.webp",
+      "prices": {
+        "SM": 8.99,
+        "LG": 10.99
+      },
+      "ingredients": [
+        "Coconut Sorbet",
+        "Coconut Oil",
+        "Chia Pudding",
+        "Granola",
+        "Banana",
+        "Pineapple",
+        "Nutella",
+        "Peanuts",
+        "Coconut Flakes"
+      ]
+    },
+    {
+      "id": "mini-nutella-flood",
+      "name": "Mini Nutella Flood",
+      "category": "Baby Bowls",
+      "tier": "baby",
+      "label": "Baby bowl",
+      "image": "/images/products/mini-nutella-flood.webp",
+      "prices": {
+        "Each": 5
+      },
+      "ingredients": [
+        "Açaí",
+        "Banana",
+        "Strawberry",
+        "Granola",
+        "Nutella"
+      ]
+    },
+    {
+      "id": "mini-tropical-storm",
+      "name": "Mini Tropical Storm",
+      "category": "Baby Bowls",
+      "tier": "baby",
+      "label": "Baby bowl",
+      "image": "/images/products/mini-tropical-storm.webp",
+      "prices": {
+        "Each": 5
+      },
+      "ingredients": [
+        "Açaí",
+        "Mango",
+        "Pineapple",
+        "Shredded Coconut",
+        "Granola",
+        "Agave Honey"
+      ]
+    },
+    {
+      "id": "mini-power-bowl",
+      "name": "Mini Power Bowl",
+      "category": "Baby Bowls",
+      "tier": "baby",
+      "label": "Baby bowl",
+      "image": "/images/products/mini-power-bowl-cutout.webp",
+      "prices": {
+        "Each": 5
+      },
+      "ingredients": [
+        "Açaí",
+        "Blueberries",
+        "Kiwi",
+        "Mango",
+        "Granola",
+        "Peanut Butter"
+      ]
+    },
+    {
+      "id": "mini-coconut-bliss",
+      "name": "Mini Coconut Bliss",
+      "category": "Baby Bowls",
+      "tier": "baby",
+      "label": "Baby bowl",
+      "image": "/images/products/mini-coconut-bliss-cutout.webp",
+      "prices": {
+        "Each": 5
+      },
+      "ingredients": [
+        "Coconut Sorbet",
+        "Banana",
+        "Shredded Coconut",
+        "Granola"
+      ]
+    },
+    {
+      "id": "strawberry-cheesecake-chia",
+      "name": "Strawberry Cheesecake Chia",
+      "category": "Chia Puddings",
+      "tier": "menu",
+      "label": "Chia Puddings",
+      "image": "/images/products/strawberry-cheesecake-chia.webp",
+      "prices": {
+        "Each": 4.25
+      },
+      "ingredients": [
+        "Chia Pudding",
+        "Strawberry",
+        "Cheesecake Cream",
+        "Granola"
+      ]
+    },
+    {
+      "id": "mango-paradise-chia",
+      "name": "Mango Paradise Chia",
+      "category": "Chia Puddings",
+      "tier": "menu",
+      "label": "Chia Puddings",
+      "image": "/images/products/mango-paradise-chia.webp",
+      "prices": {
+        "Each": 4.25
+      },
+      "ingredients": [
+        "Chia Pudding",
+        "Mango",
+        "Shredded Coconut",
+        "Coconut Cream"
+      ]
+    },
+    {
+      "id": "oreo-nutella-chia",
+      "name": "Oreo Nutella Chia",
+      "category": "Chia Puddings",
+      "tier": "menu",
+      "label": "Chia Puddings",
+      "image": "/images/products/oreo-nutella-chia.webp",
+      "prices": {
+        "Each": 4.25
+      },
+      "ingredients": [
+        "Chia Pudding",
+        "Nutella",
+        "Oreo Cookie Crumbs",
+        "Cocoa"
+      ]
+    },
+    {
+      "id": "pistachio-crunch-chia",
+      "name": "Pistachio Crunch Chia",
+      "category": "Chia Puddings",
+      "tier": "menu",
+      "label": "Chia Puddings",
+      "image": "/images/products/pistachio-crunch-chia.webp",
+      "prices": {
+        "Each": 4.25
+      },
+      "ingredients": [
+        "Chia Pudding",
+        "Pistachio Cream",
+        "Raspberry",
+        "Pistachios"
+      ]
+    },
+    {
+      "id": "a-a-smoothie",
+      "name": "Açaí Smoothie",
+      "category": "Smoothies",
+      "tier": "menu",
+      "label": "Smoothies",
+      "image": "/images/products/acai-smoothie.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Açaí"
+      ]
+    },
+    {
+      "id": "pitaya-smoothie",
+      "name": "Pitaya Smoothie",
+      "category": "Smoothies",
+      "tier": "menu",
+      "label": "Smoothies",
+      "image": "/images/products/pitaya-smoothie.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Pitaya"
+      ]
+    },
+    {
+      "id": "mango-madness",
+      "name": "Mango Madness",
+      "category": "Smoothies",
+      "tier": "menu",
+      "label": "Smoothies",
+      "image": "/images/products/mango-madness.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Mango"
+      ]
+    },
+    {
+      "id": "strawberry-banana-bliss",
+      "name": "Strawberry Banana Bliss",
+      "category": "Smoothies",
+      "tier": "menu",
+      "label": "Smoothies",
+      "image": "/images/products/strawberry-banana-bliss.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Strawberry",
+        "Banana"
+      ]
+    },
+    {
+      "id": "coconut-paradise",
+      "name": "Coconut Paradise",
+      "category": "Smoothies",
+      "tier": "menu",
+      "label": "Smoothies",
+      "image": "/images/products/coconut-paradise-smoothie.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Coconut"
+      ]
+    },
+    {
+      "id": "oreo-smoothness",
+      "name": "Oreo Smoothness",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/oreo-smoothness.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Oreo"
+      ]
+    },
+    {
+      "id": "chocolate-passion",
+      "name": "Chocolate Passion",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/chocolate-passion.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Chocolate"
+      ]
+    },
+    {
+      "id": "gone-nuts-nutella",
+      "name": "Gone Nuts Nutella",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/gone-nuts-nutella.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Nutella"
+      ]
+    },
+    {
+      "id": "strawberry-glow",
+      "name": "Strawberry Glow",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/strawberry-glow.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Strawberry"
+      ]
+    },
+    {
+      "id": "fluffy-vanilla",
+      "name": "Fluffy Vanilla",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/fluffy-vanilla.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Vanilla"
+      ]
+    },
+    {
+      "id": "caramel-kisses",
+      "name": "Caramel Kisses",
+      "category": "Milkshakes",
+      "tier": "menu",
+      "label": "Milkshakes",
+      "image": "/images/products/caramel-kisses.webp",
+      "prices": {
+        "Each": 6.89
+      },
+      "ingredients": [
+        "Caramel"
+      ]
+    },
+    {
+      "id": "oreo-frapp",
+      "name": "Oreo Frappé",
+      "category": "Frappés",
+      "tier": "menu",
+      "label": "Frappés",
+      "image": "/images/products/oreo-frappe-cutout.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Oreo Cookie"
+      ]
+    },
+    {
+      "id": "nutella-frapp",
+      "name": "Nutella Frappé",
+      "category": "Frappés",
+      "tier": "menu",
+      "label": "Frappés",
+      "image": "/images/products/nutella-frappe.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Nutella"
+      ]
+    },
+    {
+      "id": "m-m-s-frapp",
+      "name": "M&M's Frappé",
+      "category": "Frappés",
+      "tier": "menu",
+      "label": "Frappés",
+      "image": "/images/products/m-m-frappe.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "M&M's"
+      ]
+    },
+    {
+      "id": "twix-frapp",
+      "name": "Twix Frappé",
+      "category": "Frappés",
+      "tier": "menu",
+      "label": "Frappés",
+      "image": "/images/products/twix-frappe-cutout.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Twix"
+      ]
+    },
+    {
+      "id": "kit-kat-frapp",
+      "name": "Kit Kat Frappé",
+      "category": "Frappés",
+      "tier": "menu",
+      "label": "Frappés",
+      "image": "/images/products/kit-kat-frappe.webp",
+      "prices": {
+        "Each": 6.5
+      },
+      "ingredients": [
+        "Kit Kat"
+      ]
+    },
+    {
+      "id": "hot-chocolate",
+      "name": "Hot Chocolate",
+      "category": "Specialty Coffee",
+      "tier": "menu",
+      "label": "Specialty Coffee",
+      "image": "/images/products/logo.webp",
+      "prices": {
+        "Each": 1.85
+      },
+      "ingredients": [
+        "Hot chocolate"
+      ]
+    },
+    {
+      "id": "hot-coffee",
+      "name": "Hot Coffee",
+      "category": "Specialty Coffee",
+      "tier": "menu",
+      "label": "Specialty Coffee",
+      "image": "/images/products/logo.webp",
+      "prices": {
+        "Each": 2.75
+      },
+      "ingredients": [
+        "Fresh brewed"
+      ]
+    },
+    {
+      "id": "large-hot-coffee",
+      "name": "Large Hot Coffee",
+      "category": "Specialty Coffee",
+      "tier": "menu",
+      "label": "Specialty Coffee",
+      "image": "/images/products/logo.webp",
+      "prices": {
+        "Each": 3
+      },
+      "ingredients": [
+        "Fresh brewed"
+      ]
+    },
+    {
+      "id": "mocha",
+      "name": "Mocha",
+      "category": "Specialty Coffee",
+      "tier": "menu",
+      "label": "Specialty Coffee",
+      "image": "/images/products/logo.webp",
+      "prices": {
+        "Each": 3.75
+      },
+      "ingredients": [
+        "Chocolate",
+        "Coffee"
+      ]
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "category": "Specialty Coffee",
+      "tier": "menu",
+      "label": "Specialty Coffee",
+      "image": "/images/products/logo.webp",
+      "prices": {
+        "Each": 3.75
+      },
+      "ingredients": [
+        "Espresso",
+        "Milk foam"
+      ]
+    }
+  ],
+  "addOns": [
+    {
+      "name": "Extra Fruit",
+      "price": 1.25
+    },
+    {
+      "name": "Granola",
+      "price": 0.75
+    },
+    {
+      "name": "Nutella",
+      "price": 1.25
+    },
+    {
+      "name": "Peanut Butter",
+      "price": 1.25
+    },
+    {
+      "name": "Protein",
+      "price": 1.5
+    },
+    {
+      "name": "Almond Butter",
+      "price": 1.25
+    },
+    {
+      "name": "Pistachio",
+      "price": 1.5
+    },
+    {
+      "name": "Biscoff Cream",
+      "price": 1.5
+    }
+  ]
+}
