@@ -41,8 +41,11 @@ export function AppSection() {
         <div className="relative mx-auto w-full max-w-sm">
           <div className="rounded-[2.5rem] border-8 border-white/10 bg-gradient-to-br from-magenta via-purple to-yellow p-1 shadow-2xl">
             <div className="rounded-[2rem] bg-ink p-8 text-center">
-              <p className="font-script text-4xl text-magenta-hot">Açaí</p>
-              <p className="font-display text-sm font-bold uppercase tracking-[0.3em]">Factory</p>
+              <img
+                src="/brand/logo.png"
+                alt="Açaí Factory App"
+                className="mx-auto h-28 w-28 rounded-full object-cover shadow-lg"
+              />
               <div className="mt-8 rounded-3xl bg-white/10 p-6">
                 <p className="text-sm text-white/70">Ordena · Rewards · Favoritos</p>
                 <p className="mt-4 text-2xl font-bold text-yellow">Coming Soon</p>

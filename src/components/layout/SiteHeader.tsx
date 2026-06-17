@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { navLinks, siteConfig, orderingLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -14,14 +15,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="glass-panel mx-3 mt-3 rounded-2xl md:mx-6">
         <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-6">
-          <Link href="/" className="group flex shrink-0 flex-col leading-none">
-            <span className="font-script text-2xl text-magenta transition-colors group-hover:text-magenta-hot md:text-3xl">
-              Açaí
-            </span>
-            <span className="-mt-1 font-display text-sm font-extrabold uppercase tracking-[0.25em] text-ink">
-              Factory
-            </span>
-          </Link>
+          <Logo size="md" />
 
           <nav className="hidden items-center gap-1 xl:flex">
             {navLinks.map((link) => (

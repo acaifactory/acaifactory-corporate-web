@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -22,12 +23,9 @@ function Placeholder({ name, tier, className }: { name: string; tier: string; cl
       )}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_50%)]" />
-      <div className="relative z-10 px-4 text-center">
-        <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-white/25 text-3xl backdrop-blur-sm">
-          🥣
-        </div>
-        <p className="font-script text-lg text-white drop-shadow-md md:text-xl">{name}</p>
-      </div>
+      <p className="relative z-10 px-4 text-center font-script text-lg text-white drop-shadow-md">
+        {name}
+      </p>
     </div>
   );
 }
@@ -53,13 +51,14 @@ export function ProductImage({
 
   return (
     <div className={cn("relative overflow-hidden bg-cream", className)}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image}
         alt={name}
-        loading={priority ? "eager" : "lazy"}
+        fill
+        priority={priority}
         onError={() => setFailed(true)}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="object-cover transition-transform duration-500 group-hover:scale-110"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
   );

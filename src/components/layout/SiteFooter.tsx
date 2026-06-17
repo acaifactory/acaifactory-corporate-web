@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { siteConfig } from "@/lib/site";
@@ -40,8 +41,19 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
-            <p className="font-script text-4xl text-magenta-hot">Açaí Factory</p>
-            <p className="mt-2 text-lg font-medium text-yellow">{siteConfig.slogan}</p>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/brand/logo.png"
+                alt="Açaí Factory"
+                width={72}
+                height={72}
+                className="h-[4.5rem] w-[4.5rem] rounded-full object-cover ring-2 ring-white/20"
+              />
+              <div>
+                <p className="font-script text-3xl text-magenta-hot">Açaí Factory</p>
+                <p className="text-sm font-medium text-yellow">{siteConfig.slogan}</p>
+              </div>
+            </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
               Experiencias tropicales premium, comunidad y bienestar. Una marca
               construida para crecer — de Puerto Rico al mundo.

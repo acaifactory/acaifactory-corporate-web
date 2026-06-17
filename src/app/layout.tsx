@@ -32,17 +32,22 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  icons: {
+    icon: "/brand/logo.png",
+    apple: "/brand/logo.png",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     locale: "es_PR",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
+    images: [{ url: "/brand/logo.png", width: 835, height: 835, alt: "Açaí Factory" }],
   },
 };
 
