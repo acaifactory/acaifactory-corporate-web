@@ -16,7 +16,7 @@ export default function MenuPage() {
         eyebrow="Menú completo"
         title="Cada categoría, una experiencia"
         subtitle="Navega por nuestro menú premium — bowls protagonistas, ingredientes frescos y precios transparentes."
-        className="bg-cream"
+        className="mesh-luxury bg-cream"
       >
         <div className="space-y-16">
           {menuCategories.map((category) => {

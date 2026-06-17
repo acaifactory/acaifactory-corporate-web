@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { MenuItem } from "@/lib/data";
+import { getProductTheme } from "@/lib/product-themes";
 import { formatPrice } from "@/lib/utils";
-import { ProductImage } from "./ProductImage";
+import { ProductScene } from "./ProductScene";
 
 function primaryPrice(prices: Record<string, number>) {
   if (prices.LG) return { label: "LG", value: prices.LG };
@@ -13,20 +14,25 @@ function primaryPrice(prices: Record<string, number>) {
 
 export function ProductCard({ item }: { item: MenuItem }) {
   const price = primaryPrice(item.prices);
+  const theme = getProductTheme(item.id, item.tier);
 
   return (
     <Link href={`/menu/${item.id}`} className="group block perspective-scene">
       <article className="card-3d overflow-hidden rounded-[1.75rem] bg-white">
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <ProductImage
-            name={item.name}
-            image={item.image}
-            tier={item.tier}
-            className="aspect-[4/5] w-full"
-          />
-        </div>
-        <div className="relative border-t border-white/80 bg-gradient-to-b from-white to-cream/80 p-5">
+        <ProductScene
+          productId={item.id}
+          name={item.name}
+          image={item.image}
+          tier={item.tier}
+          className="aspect-[4/5] w-full"
+          compact
+        />
+        <div
+          className="relative border-t border-white/80 p-5"
+          style={{
+            background: `linear-gradient(180deg, white 0%, ${theme.primary}08 100%)`,
+          }}
+        >
           <div className="mb-2 flex items-start justify-between gap-3">
             <div>
               <p className="eyebrow-luxury !text-[0.6rem]">{item.label}</p>
@@ -34,7 +40,10 @@ export function ProductCard({ item }: { item: MenuItem }) {
                 {item.name}
               </h3>
             </div>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-magenta/10 text-magenta opacity-0 shadow-contact transition-all duration-300 group-hover:opacity-100 group-hover:shadow-elevated">
+            <span
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white opacity-0 shadow-elevated transition-all duration-300 group-hover:opacity-100"
+              style={{ background: `linear-gradient(135deg, ${theme.primary}, ${theme.tertiary})` }}
+            >
               <ArrowUpRight className="h-5 w-5" />
             </span>
           </div>

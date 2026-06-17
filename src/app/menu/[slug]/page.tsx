@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { ProductImage } from "@/components/ui/ProductImage";
+import { ProductScene } from "@/components/ui/ProductScene";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { addOns, getMenuItem, menuItems } from "@/lib/data";
+import { getProductTheme } from "@/lib/product-themes";
 import { orderingLink } from "@/lib/site";
 import { formatPrice } from "@/lib/utils";
 
@@ -27,38 +28,51 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const item = getMenuItem(slug);
   if (!item) notFound();
+  const theme = getProductTheme(item.id, item.tier);
 
   return (
     <div className="pt-28">
-      <SectionShell className="bg-cream">
+      <SectionShell
+        className="mesh-luxury"
+        eyebrow={theme.scene}
+        title={item.name}
+        subtitle={`${item.category} · ${item.label} — Una experiencia cinematográfica única, creada con ingredientes premium y la energía tropical de Açaí Factory.`}
+      >
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <ProductImage
-            name={item.name}
-            image={item.image}
-            tier={item.tier}
-            className="aspect-square w-full rounded-[2rem]"
-            priority
-          />
+          <div className="shadow-floating overflow-hidden rounded-[2rem]">
+            <ProductScene
+              productId={item.id}
+              name={item.name}
+              image={item.image}
+              tier={item.tier}
+              className="aspect-square w-full"
+              priority
+            />
+          </div>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-magenta">
-              {item.category} · {item.label}
-            </p>
-            <h1 className="mt-3 font-display text-4xl font-black text-ink md:text-5xl">
-              {item.name}
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-soft-ink">
-              Una creación premium pensada para verse tan bien como sabe. Ingredientes
-              seleccionados, energía tropical y la calidad que define a Açaí Factory.
-            </p>
+            <div className="flex flex-wrap gap-2">
+              {[theme.primary, theme.secondary, theme.tertiary].map((color) => (
+                <span
+                  key={color}
+                  className="h-8 w-8 rounded-full shadow-contact ring-2 ring-white"
+                  style={{ background: color }}
+                />
+              ))}
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               {Object.entries(item.prices).map(([size, price]) => (
                 <div
                   key={size}
-                  className="rounded-2xl bg-white px-5 py-4 shadow-sm"
+                  className="rounded-2xl px-5 py-4 shadow-elevated"
+                  style={{
+                    background: `linear-gradient(135deg, white, ${theme.primary}12)`,
+                  }}
                 >
                   <p className="text-xs font-bold uppercase text-soft-ink">{size}</p>
-                  <p className="text-2xl font-black text-ink">{formatPrice(price)}</p>
+                  <p className="font-luxury text-3xl font-bold text-ink">
+                    {formatPrice(price)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -69,7 +83,10 @@ export default async function ProductPage({ params }: Props) {
                 {item.ingredients.map((ing) => (
                   <li
                     key={ing}
-                    className="rounded-full bg-white px-4 py-2 text-sm text-soft-ink shadow-sm"
+                    className="rounded-full px-4 py-2 text-sm font-medium text-ink shadow-contact"
+                    style={{
+                      background: `linear-gradient(135deg, ${theme.secondary}22, ${theme.tertiary}18)`,
+                    }}
                   >
                     {ing}
                   </li>
@@ -84,10 +101,10 @@ export default async function ProductPage({ params }: Props) {
                   {addOns.map((addon) => (
                     <li
                       key={addon.name}
-                      className="flex justify-between rounded-xl bg-white px-4 py-3 text-sm"
+                      className="flex justify-between rounded-xl bg-white/80 px-4 py-3 text-sm shadow-contact"
                     >
                       <span>{addon.name}</span>
-                      <span className="font-bold">{formatPrice(addon.price)}</span>
+                      <span className="font-bold text-magenta">{formatPrice(addon.price)}</span>
                     </li>
                   ))}
                 </ul>
@@ -95,9 +112,9 @@ export default async function ProductPage({ params }: Props) {
             )}
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button href={orderingLink(item.id)}>ADD TO BAG</Button>
+              <Button href={orderingLink(item.id)}>Add to Bag</Button>
               <Button variant="secondary" href="/menu">
-                BACK TO MENU
+                Back to Menu
               </Button>
             </div>
           </div>

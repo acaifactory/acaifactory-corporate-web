@@ -444,3 +444,191 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
+
+/* ─── Product cinematic scenes ─── */
+.scene-cinematic {
+  animation: scene-hue 12s ease-in-out infinite;
+}
+
+@keyframes scene-hue {
+  0%, 100% { filter: saturate(1.1) brightness(1); }
+  50% { filter: saturate(1.35) brightness(1.05); }
+}
+
+.scene-earthquake-shake {
+  animation: earthquake-shake 0.55s ease-in-out infinite;
+}
+
+@keyframes earthquake-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-4px, 2px) rotate(-0.5deg); }
+  30% { transform: translate(4px, -2px) rotate(0.5deg); }
+  45% { transform: translate(-3px, -3px) rotate(-0.3deg); }
+  60% { transform: translate(3px, 3px) rotate(0.3deg); }
+  75% { transform: translate(-2px, 1px) rotate(-0.2deg); }
+}
+
+.scene-earthquake-cracks {
+  background:
+    repeating-linear-gradient(
+      72deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 20, 147, 0.15) 40px,
+      rgba(255, 20, 147, 0.15) 42px
+    ),
+    repeating-linear-gradient(
+      -38deg,
+      transparent,
+      transparent 60px,
+      rgba(106, 31, 184, 0.12) 60px,
+      rgba(106, 31, 184, 0.12) 62px
+    );
+  animation: crack-pulse 2s ease-in-out infinite;
+}
+
+@keyframes crack-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.55; }
+}
+
+.scene-lava {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 207, 0, 0.7) 0%,
+    rgba(236, 0, 140, 0.6) 40%,
+    rgba(106, 31, 184, 0.4) 70%,
+    transparent 100%
+  );
+  animation: lava-rise 3s ease-in-out infinite;
+}
+
+@keyframes lava-rise {
+  0%, 100% { transform: translateY(8px) scaleY(1); opacity: 0.85; }
+  50% { transform: translateY(-6px) scaleY(1.08); opacity: 1; }
+}
+
+.scene-bubble {
+  animation: bubble-rise 2.5s ease-in infinite;
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-120px) scale(0.3); opacity: 0; }
+}
+
+.scene-twister {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    var(--magenta) 0deg,
+    var(--yellow) 90deg,
+    var(--purple) 180deg,
+    var(--magenta-hot) 270deg,
+    var(--magenta) 360deg
+  );
+  animation: twister-spin 6s linear infinite;
+}
+
+@keyframes twister-spin {
+  from { transform: rotate(0deg) scale(1.5); }
+  to { transform: rotate(360deg) scale(1.5); }
+}
+
+.scene-wave {
+  background: linear-gradient(180deg, transparent, rgba(236, 0, 140, 0.35), rgba(255, 207, 0, 0.45));
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.scene-wave-1 { animation: wave-roll 4s ease-in-out infinite; }
+.scene-wave-2 { animation: wave-roll 3s ease-in-out infinite reverse; opacity: 0.7; }
+
+@keyframes wave-roll {
+  0%, 100% { transform: translateX(-5%) scaleX(1.1); }
+  50% { transform: translateX(5%) scaleX(1.15); }
+}
+
+.scene-lightning {
+  animation: lightning-flash 4s ease-in-out infinite;
+}
+
+@keyframes lightning-flash {
+  0%, 89%, 100% { background: transparent; }
+  90% { background: rgba(255, 255, 255, 0.25); }
+  91% { background: transparent; }
+  93% { background: rgba(255, 207, 0, 0.2); }
+  94% { background: transparent; }
+}
+
+.scene-galaxy {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 20, 147, 0.5) 0%, transparent 35%),
+    radial-gradient(circle at 70% 60%, rgba(255, 207, 0, 0.35) 0%, transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(106, 31, 184, 0.4) 0%, transparent 50%);
+  animation: galaxy-drift 8s ease-in-out infinite;
+}
+
+@keyframes galaxy-drift {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(3deg); }
+}
+
+.scene-eclipse {
+  background: radial-gradient(circle, var(--yellow) 0%, var(--magenta) 45%, transparent 70%);
+  box-shadow: 0 0 80px var(--magenta-glow);
+  animation: eclipse-pulse 5s ease-in-out infinite;
+}
+
+@keyframes eclipse-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.scene-snowfall {
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(2px 2px at 80% 10%, white, transparent);
+  background-size: 200% 200%;
+  animation: snow-drift 10s linear infinite;
+}
+
+@keyframes snow-drift {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+.scene-rain {
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.08) 4px,
+    rgba(255, 255, 255, 0.08) 8px
+  );
+  animation: rain-fall 0.8s linear infinite;
+}
+
+@keyframes rain-fall {
+  from { background-position: 0 0; }
+  to { background-position: 0 40px; }
+}
+
+.scene-particle {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.2); }
+}
+
+.scene-float {
+  animation: scene-float-emoji 3s ease-in-out infinite;
+}
+
+@keyframes scene-float-emoji {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(8deg); }
+}
+

@@ -9,7 +9,7 @@ export function PromotionsSection() {
       eyebrow="Promociones"
       title="Ofertas que generan deseo"
       subtitle="Promociones diseñadas para convertir curiosidad en visitas, visitas en hábito, y hábito en comunidad."
-      className="bg-white"
+        className="mesh-luxury bg-white"
     >
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {promotions.map((promo) => (

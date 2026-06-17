@@ -13,7 +13,7 @@ export function MenuPreviewSection() {
       eyebrow="Menú"
       title="Bowls que se comen con los ojos"
       subtitle="Signature, premium, tropical y baby bowls — cada creación diseñada para verse real, fresca y premium."
-      className="bg-cream"
+        className="bg-cream mesh-luxury"
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item) => (
