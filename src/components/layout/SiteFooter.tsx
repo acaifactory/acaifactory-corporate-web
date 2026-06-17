@@ -36,8 +36,9 @@ const footerGroups = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-ink text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(236,0,140,0.35),transparent_40%),radial-gradient(circle_at_80%_100%,rgba(255,207,0,0.15),transparent_35%)]" />
+    <footer className="relative overflow-hidden bg-gradient-to-b from-ink to-purple-deep text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(236,0,140,0.4),transparent_45%),radial-gradient(circle_at_80%_100%,rgba(255,207,0,0.12),transparent_40%)]" />
+      <div className="noise-overlay absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
@@ -47,11 +48,11 @@ export function SiteFooter() {
                 alt="Açaí Factory"
                 width={72}
                 height={72}
-                className="h-[4.5rem] w-[4.5rem] rounded-full object-cover ring-2 ring-white/20"
+                className="h-[4.5rem] w-[4.5rem] rounded-full object-cover shadow-floating ring-2 ring-white/30"
               />
               <div>
-                <p className="font-script text-3xl text-magenta-hot">Açaí Factory</p>
-                <p className="text-sm font-medium text-yellow">{siteConfig.slogan}</p>
+                <p className="font-script text-4xl text-magenta-hot">Açaí Factory</p>
+                <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-yellow">{siteConfig.slogan}</p>
               </div>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">

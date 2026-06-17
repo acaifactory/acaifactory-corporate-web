@@ -3,43 +3,47 @@ import type { Promotion } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const accents = {
-  magenta: "from-magenta/15 to-magenta-hot/5 border-magenta/20",
-  yellow: "from-yellow/20 to-yellow/5 border-yellow/30",
-  purple: "from-purple/15 to-purple/5 border-purple/20",
+  magenta: "from-magenta/12 via-white to-magenta-hot/5",
+  yellow: "from-yellow/18 via-white to-yellow/5",
+  purple: "from-purple/12 via-white to-purple/5",
 } as const;
 
 export function PromoCard({ promo }: { promo: Promotion }) {
   return (
     <article
       className={cn(
-        "card-elevated group relative overflow-hidden rounded-3xl border bg-gradient-to-br p-6 md:p-8",
+        "card-3d group relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-gradient-to-br p-7 md:p-9",
         accents[promo.accent]
       )}
     >
-      <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/30 blur-2xl transition-transform duration-500 group-hover:scale-150" />
-      <span className="inline-flex rounded-full bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-magenta">
-        {promo.badge}
-      </span>
-      <h3 className="mt-4 font-display text-2xl font-extrabold text-ink md:text-3xl">
-        {promo.title}
-      </h3>
-      <p className="mt-1 font-script text-xl text-magenta">{promo.subtitle}</p>
-      <p className="mt-4 text-sm leading-relaxed text-soft-ink md:text-base">
-        {promo.description}
-      </p>
-      <Link
-        href={
-          promo.id === "rewards-offers"
-            ? "/rewards"
-            : promo.id === "app-exclusive"
-              ? "/app"
-              : "/promotions"
-        }
-        className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-magenta transition-colors hover:text-magenta-hot"
-      >
-        {promo.cta}
-        <span aria-hidden>→</span>
-      </Link>
+      <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-magenta/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-60" />
+
+      <div className="relative">
+        <span className="badge-float-3d inline-flex rounded-full border border-magenta/15 bg-white/90 px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-magenta">
+          {promo.badge}
+        </span>
+        <h3 className="heading-luxury mt-5 text-3xl text-ink md:text-4xl">
+          {promo.title}
+        </h3>
+        <p className="mt-2 font-script text-3xl text-magenta">{promo.subtitle}</p>
+        <p className="mt-5 font-display text-sm font-medium leading-relaxed text-soft-ink md:text-base">
+          {promo.description}
+        </p>
+        <Link
+          href={
+            promo.id === "rewards-offers"
+              ? "/rewards"
+              : promo.id === "app-exclusive"
+                ? "/app"
+                : "/promotions"
+          }
+          className="mt-7 inline-flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-magenta transition-all hover:gap-3 hover:text-magenta-hot"
+        >
+          {promo.cta}
+          <span aria-hidden>→</span>
+        </Link>
+      </div>
     </article>
   );
 }

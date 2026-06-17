@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Pacifico } from "next/font/google";
+import { Cormorant_Garamond, Outfit, Allura } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const body = Plus_Jakarta_Sans({
+const body = Outfit({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const display = Plus_Jakarta_Sans({
+const display = Outfit({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const script = Pacifico({
+const luxury = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-luxury",
+  display: "swap",
+});
+
+const script = Allura({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-script",
@@ -58,7 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${body.variable} ${display.variable} ${script.variable} antialiased`}>
+      <body
+        className={`${body.variable} ${display.variable} ${luxury.variable} ${script.variable} antialiased`}
+      >
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
