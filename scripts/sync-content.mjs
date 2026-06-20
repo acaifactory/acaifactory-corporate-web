@@ -25,7 +25,6 @@ function extractArray(source, name) {
     if (source[i] === "]") {
       depth--;
       if (depth === 0) {
-        // eslint-disable-next-line no-eval
         return eval(source.slice(bracketStart, i + 1));
       }
     }
