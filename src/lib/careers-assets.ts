@@ -19,14 +19,14 @@ export const careersAssets = {
   applyButton: {
     widthIn: 4,
     heightIn: 2,
-    fontPt: 14,
+    fontPt: 20,
   },
   applicationForm: {
-    widthIn: 6,
-    heightIn: 9,
-    fontPt: 18,
-    fieldHeightIn: 0.8,
-    textareaHeightIn: 1.4,
-    submitHeightIn: 0.85,
+    widthIn: 8,
+    heightIn: 10,
+    fontPt: 24,
+    fieldHeightIn: 1,
+    textareaHeightIn: 1.6,
+    submitHeightIn: 1,
   },
 } as const;
