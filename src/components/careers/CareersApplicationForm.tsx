@@ -9,12 +9,14 @@ import "./careers-accessible.css";
 const formSpec = careersAssets.applicationForm;
 
 const modalStyle = {
-  "--careers-form-width-in": formSpec.widthIn,
-  "--careers-form-height-in": formSpec.heightIn,
-  "--careers-form-font-pt": formSpec.fontPt,
-  "--careers-field-height-in": formSpec.fieldHeightIn,
-  "--careers-textarea-height-in": formSpec.textareaHeightIn,
-  "--careers-submit-height-in": formSpec.submitHeightIn,
+  "--careers-form-width": `${formSpec.widthIn}in`,
+  "--careers-form-width-vw": `${formSpec.desktopWidthVw}vw`,
+  "--careers-form-height": `${formSpec.heightIn}in`,
+  "--careers-form-height-vh": `${formSpec.desktopHeightVh}vh`,
+  "--careers-form-font-size": `max(${formSpec.fontPt}pt, ${formSpec.desktopFontVw}vw)`,
+  "--careers-field-height": `max(${formSpec.fieldHeightIn}in, ${formSpec.fieldHeightVh}vh)`,
+  "--careers-textarea-height": `max(${formSpec.textareaHeightIn}in, ${formSpec.textareaHeightVh}vh)`,
+  "--careers-submit-height": `max(${formSpec.submitHeightIn}in, ${formSpec.submitHeightVh}vh)`,
 } as CSSProperties;
 
 type FormState = "idle" | "submitting" | "success" | "error";

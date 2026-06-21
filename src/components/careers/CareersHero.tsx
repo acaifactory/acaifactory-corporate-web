@@ -40,7 +40,7 @@ export function CareersHero() {
             onClick={() => setFormOpen(true)}
             aria-haspopup="dialog"
             className="careers-apply-btn font-display"
-            style={{ fontSize: `${btn.fontPt}pt` }}
+            style={{ fontSize: `max(${btn.fontPt}pt, ${btn.desktopFontVw}vw)` }}
           >
             Aplicar ahora
           </button>

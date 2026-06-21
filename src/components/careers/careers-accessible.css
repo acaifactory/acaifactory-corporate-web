@@ -49,27 +49,27 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: calc(var(--careers-form-width-in) * 1in);
-  height: calc(var(--careers-form-height-in) * 1in);
+  width: max(var(--careers-form-width), var(--careers-form-width-vw));
+  height: max(var(--careers-form-height), var(--careers-form-height-vh));
   max-width: calc(100vw - 1rem);
   max-height: calc(100vh - 1rem);
   border-radius: 0.65rem;
   background: #ffffff;
   box-shadow: 0 20px 50px rgba(26, 10, 20, 0.35);
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
 }
 
 .careers-modal-scroll {
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: calc(100% / var(--careers-form-height-in) * 0.35);
+  padding: 3.5%;
 }
 
 .careers-modal-title {
   margin: 0;
-  padding-right: calc(100% / var(--careers-form-height-in) * 0.55);
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  padding-right: 5.5%;
+  font-size: var(--careers-form-font-size);
   font-weight: 800;
   line-height: 1.2;
   text-transform: uppercase;
@@ -77,8 +77,8 @@
 }
 
 .careers-modal-help {
-  margin: calc(100% / var(--careers-form-height-in) * 0.15) 0 0;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  margin: 1.5% 0 0;
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   line-height: 1.35;
   color: #1a0a14;
@@ -87,14 +87,14 @@
 .careers-form {
   display: flex;
   flex-direction: column;
-  gap: calc(100% / var(--careers-form-height-in) * 0.12);
-  margin-top: calc(100% / var(--careers-form-height-in) * 0.2);
+  gap: 1.2%;
+  margin-top: 2%;
 }
 
 .careers-label {
   display: block;
-  margin-bottom: calc(100% / var(--careers-form-height-in) * 0.06);
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  margin-bottom: 0.6%;
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   line-height: 1.3;
   color: #1a0a14;
@@ -102,22 +102,22 @@
 
 .careers-field-wrap {
   position: relative;
-  height: calc(var(--careers-field-height-in) * 1in);
+  height: var(--careers-field-height);
 }
 
 .careers-field-icon {
   position: absolute;
-  left: calc(100% / var(--careers-form-height-in) * 0.18);
+  left: 1.8%;
   top: 50%;
   transform: translateY(-50%);
-  width: calc(var(--careers-form-font-pt) * 1.1pt);
-  height: calc(var(--careers-form-font-pt) * 1.1pt);
+  width: 1.1em;
+  height: 1.1em;
   color: #ff1493;
   pointer-events: none;
 }
 
 .careers-field-icon-top {
-  top: calc(100% / var(--careers-form-height-in) * 0.14);
+  top: 1.4%;
   transform: none;
 }
 
@@ -126,11 +126,10 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 0 calc(100% / var(--careers-form-height-in) * 0.15) 0
-    calc(100% / var(--careers-form-height-in) * 0.45);
+  padding: 0 1.5% 0 4.5%;
   border: 1.5px solid rgba(0, 0, 0, 0.18);
   border-radius: 0.35rem;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   line-height: 1.2;
   color: #1a0a14;
@@ -139,7 +138,7 @@
 }
 
 .careers-input::placeholder {
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   color: rgba(26, 10, 20, 0.55);
 }
@@ -153,20 +152,17 @@
 
 .careers-textarea-wrap {
   position: relative;
-  height: calc(var(--careers-textarea-height-in) * 1in);
+  height: var(--careers-textarea-height);
 }
 
 .careers-textarea {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: calc(100% / var(--careers-form-height-in) * 0.12)
-    calc(100% / var(--careers-form-height-in) * 0.15)
-    calc(100% / var(--careers-form-height-in) * 0.12)
-    calc(100% / var(--careers-form-height-in) * 0.45);
+  padding: 1.2% 1.5% 1.2% 4.5%;
   border: 1.5px solid rgba(0, 0, 0, 0.18);
   border-radius: 0.35rem;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   line-height: 1.35;
   color: #1a0a14;
@@ -176,25 +172,25 @@
 }
 
 .careers-textarea::placeholder {
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   color: rgba(26, 10, 20, 0.55);
 }
 
 .careers-file {
-  padding-left: calc(100% / var(--careers-form-height-in) * 0.15);
+  padding-left: 1.5%;
   border-style: dashed;
   border-color: rgba(255, 20, 147, 0.55);
   background: rgba(255, 20, 147, 0.06);
 }
 
 .careers-file::file-selector-button {
-  height: calc(var(--careers-field-height-in) * 0.75 * 1in);
-  margin-right: calc(100% / var(--careers-form-height-in) * 0.1);
-  padding: 0 calc(100% / var(--careers-form-height-in) * 0.12);
+  height: 75%;
+  margin-right: 1%;
+  padding: 0 1.2%;
   border: 0;
   border-radius: 0.25rem;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   color: #ffffff;
   background: #ff1493;
@@ -203,11 +199,11 @@
 
 .careers-submit {
   width: 100%;
-  height: calc(var(--careers-submit-height-in) * 1in);
-  margin-top: calc(100% / var(--careers-form-height-in) * 0.05);
+  height: var(--careers-submit-height);
+  margin-top: 0.5%;
   border: 0;
   border-radius: 0.35rem;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -224,14 +220,14 @@
 
 .careers-close {
   position: absolute;
-  top: calc(100% / var(--careers-form-height-in) * 0.12);
-  right: calc(100% / var(--careers-form-height-in) * 0.12);
+  top: 1.2%;
+  right: 1.2%;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(var(--careers-field-height-in) * 0.65 * 1in);
-  height: calc(var(--careers-field-height-in) * 0.65 * 1in);
+  width: 2.2em;
+  height: 2.2em;
   border: 0;
   border-radius: 9999px;
   background: transparent;
@@ -244,10 +240,10 @@
 }
 
 .careers-error {
-  padding: calc(100% / var(--careers-form-height-in) * 0.1);
+  padding: 1%;
   border: 1.5px solid #fecaca;
   border-radius: 0.35rem;
-  font-size: calc(var(--careers-form-font-pt) * 1pt);
+  font-size: var(--careers-form-font-size);
   font-weight: 700;
   color: #991b1b;
   background: #fef2f2;
