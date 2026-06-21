@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+/_folder.zip
+/_od*
+/_onedrive*
 
 # debug
 npm-debug.log*

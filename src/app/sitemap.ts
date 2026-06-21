@@ -1,39 +1,20 @@
 import type { MetadataRoute } from "next";
-import { menuItems } from "@/lib/data";
-import { siteConfig } from "@/lib/site";
+import { legalLinks, officialHeaderNav, siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
-  const staticPages = [
-    "",
-    "/menu",
-    "/promotions",
-    "/rewards",
+  const paths = [
+    ...officialHeaderNav.map((link) => link.href),
+    "/faq",
+    "/about",
     "/app",
-    "/delivery",
-    "/locations",
-    "/catering",
-    "/franchises",
-    "/support",
-    "/community",
-    "/contact",
-    "/careers",
-    "/privacy",
-    "/terms",
+    ...legalLinks.map((link) => link.href),
   ];
 
-  return [
-    ...staticPages.map((path) => ({
-      url: `${base}${path}`,
-      lastModified: new Date(),
-      changeFrequency: path === "" ? ("daily" as const) : ("weekly" as const),
-      priority: path === "" ? 1 : path === "/menu" ? 0.9 : 0.7,
-    })),
-    ...menuItems.map((item) => ({
-      url: `${base}/menu/${item.id}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-  ];
+  return [...new Set(paths)].map((path) => ({
+    url: `${base}${path === "/" ? "" : path}`,
+    lastModified: new Date(),
+    changeFrequency: path === "/" ? ("daily" as const) : ("weekly" as const),
+    priority: path === "/" ? 1 : 0.7,
+  }));
 }
