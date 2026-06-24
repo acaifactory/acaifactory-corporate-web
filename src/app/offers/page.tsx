@@ -24,7 +24,7 @@ export default function OffersPage() {
           decoding="async"
         />
         <div className="bg-cream px-5 py-4 text-center sm:px-8 sm:py-5 lg:px-12 lg:py-6">
-          <p className="mx-auto max-w-5xl rounded-2xl border border-magenta-neon/15 bg-white/80 px-4 py-3 text-xs font-semibold leading-relaxed text-soft-ink shadow-[0_6px_18px_rgba(74,18,136,0.05)] sm:text-sm lg:px-6 lg:py-4 lg:text-base">
+          <p className="mx-auto max-w-5xl rounded-2xl border border-magenta-neon/15 bg-white/80 px-4 py-3 text-xs font-semibold leading-relaxed text-soft-ink shadow-[0_6px_18px_rgba(74,18,136,0.05)] sm:text-sm lg:max-w-[1600px] lg:px-8 lg:py-6 lg:text-[28pt] lg:leading-snug xl:text-[32pt]">
             <span className="font-black uppercase text-magenta-neon">Aviso legal:</span>{" "}
             Los descuentos publicados en esta página web son validados únicamente en tienda.
             No están disponibles para compras, órdenes o redenciones realizadas en nuestra app móvil.
