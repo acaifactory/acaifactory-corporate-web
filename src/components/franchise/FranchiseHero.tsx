@@ -7,6 +7,18 @@ import { franchiseAssets } from "@/lib/franchise-assets";
 
 type StoryId = keyof typeof franchiseAssets.stories;
 type Language = "es" | "en";
+const mobileActionButtons = [
+  {
+    id: "invest",
+    label: "Quiero invertir",
+    href: "/contact?interest=franchise",
+  },
+  {
+    id: "learn-more",
+    label: "Conoce más",
+    href: "/contact?interest=franchise",
+  },
+] as const;
 
 export function FranchiseHero() {
   const [activeStory, setActiveStory] = useState<StoryId | null>(null);
@@ -112,7 +124,7 @@ export function FranchiseHero() {
       ))}
 
       <div className="grid gap-4 bg-cream px-4 py-6 sm:grid-cols-2 lg:hidden">
-        {franchiseAssets.buttons.map((button) => (
+        {mobileActionButtons.map((button) => (
           <Link
             key={button.id}
             href={button.href}
