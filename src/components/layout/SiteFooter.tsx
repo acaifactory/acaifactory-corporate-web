@@ -6,10 +6,10 @@ export function SiteFooter() {
     <footer className="border-t border-magenta-neon/15 bg-gray-50">
       <div className="mx-auto flex max-w-[1900px] flex-col gap-9 px-5 py-12 md:px-8 lg:py-14">
         <div className="text-center lg:text-left">
-          <p className="font-display text-[clamp(25pt,2.8vw,36pt)] font-black leading-none text-ink">
+          <p className="font-display text-base font-black leading-none text-ink sm:text-lg lg:text-[clamp(25pt,2.8vw,36pt)]">
             {siteConfig.name}
           </p>
-          <p className="mt-3 text-[clamp(18pt,2vw,26pt)] font-semibold leading-snug text-soft-ink">
+          <p className="mt-2 text-xs font-semibold leading-snug text-soft-ink sm:text-sm lg:mt-3 lg:text-[clamp(18pt,2vw,26pt)]">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
         </div>
