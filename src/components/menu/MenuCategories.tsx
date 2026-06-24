@@ -43,7 +43,7 @@ export function MenuCategories() {
         aria-label="Categorías del menú"
         className="sticky top-[var(--site-header-height,7rem)] z-40 border-b border-gray-200 bg-white/95 backdrop-blur-sm"
       >
-        <div className="mx-auto flex w-full max-w-[1920px] flex-wrap items-stretch justify-center gap-3 px-4 py-5 sm:gap-8 sm:px-8 sm:py-10 lg:px-10">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-nowrap items-stretch justify-start gap-2 overflow-x-auto px-3 py-3 sm:gap-4 sm:px-5 sm:py-5 lg:flex-wrap lg:justify-center lg:gap-8 lg:px-10 lg:py-10">
           {menuCategories.map((category) => {
             const selected = category.id === activeId;
             return (
@@ -56,7 +56,7 @@ export function MenuCategories() {
                 aria-controls={`menu-panel-${category.id}`}
                 onClick={() => selectCategory(category.id)}
                 className={cn(
-                  "font-display w-full min-w-0 flex-1 rounded-full px-6 py-4 text-2xl font-extrabold uppercase leading-none tracking-wide transition sm:w-auto sm:flex-none sm:px-20 sm:py-10 sm:text-[3rem] lg:text-[3.5rem]",
+                  "font-display min-h-10 min-w-[7rem] shrink-0 rounded-full px-4 py-2 text-sm font-extrabold uppercase leading-tight tracking-wide transition sm:min-h-12 sm:min-w-[9rem] sm:px-5 sm:py-3 sm:text-base lg:min-w-0 lg:flex-none lg:px-20 lg:py-10 lg:text-[3.5rem]",
                   selected
                     ? "bg-magenta-neon text-white shadow-[0_16px_64px_rgba(255,20,147,0.35)]"
                     : "bg-gray-100 text-ink hover:bg-gray-200"

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <main className="pt-[calc(var(--site-header-height,7rem)+1.25rem+0.5in)]">
+    <main className="pt-[calc(var(--site-header-height,7rem)+0.5rem)] lg:pt-[calc(var(--site-header-height,7rem)+1.25rem+0.5in)]">
       <MenuCategories />
     </main>
   );
