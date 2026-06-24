@@ -4,7 +4,7 @@ export function CateringOccasions() {
   return (
     <section
       aria-label="Opciones de catering Açaí Factory"
-      className="bg-cream px-6 py-20 sm:px-8 lg:px-12"
+      className="bg-cream px-6 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-10 lg:px-12 lg:py-20"
     >
       <div className="mx-auto max-w-[110rem]">
         <div className="mx-auto max-w-6xl text-center">

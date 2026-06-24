@@ -82,7 +82,7 @@ export function CateringHero() {
         <span className="sr-only">{cateringAssets.quoteButton.label}</span>
       </button>
 
-      <div className="bg-cream px-4 py-6 lg:hidden">
+      <div className="bg-cream px-4 pb-2 pt-5 lg:hidden">
         <button
           type="button"
           onClick={() => setOpen(true)}
