@@ -43,7 +43,7 @@ function SocialIcon({ name, className }: { name: string; className?: string }) {
 
 export function HomeHero() {
   return (
-    <section className="relative isolate z-0 w-full shrink-0 bg-magenta-neon" aria-label="Home hero">
+    <section className="relative isolate z-0 w-full shrink-0 bg-magenta-neon pt-[var(--site-header-height,64px)] lg:pt-0" aria-label="Home hero">
       {/* 16:9 desktop — full width; CLEAN image when delivered */}
       <div className="relative w-full overflow-hidden bg-magenta-neon lg:aspect-[16/9] lg:min-h-[540px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
