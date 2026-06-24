@@ -77,13 +77,22 @@ export function AccountExperience() {
         />
 
         <div
-          className="absolute z-10 flex flex-col sm:flex-row"
+          className="absolute z-10 hidden flex-col sm:flex-row lg:flex"
           style={{
             ...accountAssets.guestActionSlot,
             gap: accountAssets.heroActionSpec.gap,
           }}
           data-account-ui="hero-actions"
         >
+          <AccountButton tone="magenta" onClick={() => openDialog("sign-in")}>
+            Sign In
+          </AccountButton>
+          <AccountButton tone="yellow" onClick={() => openDialog("create-account")}>
+            Create Account
+          </AccountButton>
+        </div>
+
+        <div className="grid gap-4 bg-cream px-4 py-6 sm:grid-cols-2 lg:hidden">
           <AccountButton tone="magenta" onClick={() => openDialog("sign-in")}>
             Sign In
           </AccountButton>
@@ -331,11 +340,11 @@ function AccountCard({
         >
           {eyebrow}
         </p>
-        <h2 className="mt-3 font-display text-[clamp(38px,4vw,58px)] font-black leading-[1.02]">
+        <h2 className="mt-3 font-display text-3xl font-black leading-[1.02] sm:text-4xl lg:text-[clamp(38px,4vw,58px)]">
           {title}
         </h2>
         <p
-          className={`mt-5 text-[clamp(20px,2vw,26px)] font-semibold leading-relaxed ${
+          className={`mt-5 text-base font-semibold leading-relaxed sm:text-lg lg:text-[clamp(20px,2vw,26px)] ${
             purple ? "text-white/88" : "text-soft-ink"
           }`}
         >
@@ -346,7 +355,7 @@ function AccountCard({
       <button
         type="button"
         onClick={onClick}
-        className={`mt-8 inline-flex min-h-[78px] w-full items-center justify-center gap-3 rounded-full px-8 text-[clamp(22px,2.3vw,30px)] font-black uppercase tracking-wide transition hover:-translate-y-0.5 focus:outline-none focus:ring-8 ${
+        className={`mt-8 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full px-6 text-base font-black uppercase tracking-wide transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 sm:text-lg lg:min-h-[78px] lg:px-8 lg:text-[clamp(22px,2.3vw,30px)] lg:focus:ring-8 ${
           purple
             ? "bg-yellow text-ink shadow-[0_16px_38px_rgba(255,196,0,0.22)] focus:ring-yellow/30"
             : "bg-magenta-neon text-white shadow-[0_16px_38px_rgba(236,0,140,0.24)] focus:ring-magenta-neon/25"

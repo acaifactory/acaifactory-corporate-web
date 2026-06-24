@@ -268,9 +268,9 @@ export default function LegalInformationPage() {
           </p>
         </LegalSection>
 
-        <aside className="mx-auto w-[min(98vw,41.2in)] rounded-[3.5rem] bg-purple-deep p-10 text-white shadow-xl sm:p-16">
-          <h2 className="font-display text-[clamp(44px,5vw,76px)] font-black">Questions?</h2>
-          <p className="mt-6 text-[clamp(28px,3.3vw,48px)] font-semibold leading-relaxed text-white/88">
+        <aside className="mx-auto w-[min(94vw,41.2in)] rounded-[1.5rem] bg-purple-deep p-6 text-white shadow-xl sm:p-8 lg:w-[min(98vw,41.2in)] lg:rounded-[3.5rem] lg:p-16">
+          <h2 className="font-display text-3xl font-black lg:text-[clamp(44px,5vw,76px)]">Questions?</h2>
+          <p className="mt-4 text-lg font-semibold leading-relaxed text-white/88 lg:mt-6 lg:text-[clamp(28px,3.3vw,48px)]">
             Contact Açaí Factory at{" "}
             <a className="font-black text-yellow underline" href="mailto:acaifactorypr@gmail.com">
               acaifactorypr@gmail.com
@@ -297,15 +297,15 @@ function LegalSection({
   return (
     <section
       id={id}
-      className="mx-auto min-h-[calc(100vh-var(--site-header-height,7rem)-2rem)] w-[min(98vw,41.2in)] scroll-mt-[calc(var(--site-header-height,7rem)+7rem)] rounded-[3.5rem] border-[10px] border-[#b98b43] bg-[#fff8e9] p-8 shadow-[0_35px_100px_rgba(74,18,136,0.2)] sm:p-12 lg:p-16"
+      className="mx-auto min-h-0 w-[min(94vw,41.2in)] scroll-mt-[calc(var(--site-header-height,7rem)+7rem)] rounded-[1.5rem] border-4 border-[#b98b43] bg-[#fff8e9] p-4 shadow-[0_35px_100px_rgba(74,18,136,0.2)] sm:p-6 lg:min-h-[calc(100vh-var(--site-header-height,7rem)-2rem)] lg:w-[min(98vw,41.2in)] lg:rounded-[3.5rem] lg:border-[10px] lg:p-16"
     >
-      <p className="text-[clamp(26px,3vw,46px)] font-black uppercase tracking-[0.2em] text-magenta-neon">
+      <p className="text-base font-black uppercase tracking-[0.2em] text-magenta-neon sm:text-lg lg:text-[clamp(26px,3vw,46px)]">
         {number}
       </p>
-      <h2 className="mt-4 font-display text-[clamp(60px,8vw,118px)] font-black uppercase leading-[0.92] text-ink">
+      <h2 className="mt-3 font-display text-3xl font-black uppercase leading-[0.95] text-ink sm:text-4xl lg:mt-4 lg:text-[clamp(60px,8vw,118px)] lg:leading-[0.92]">
         {title}
       </h2>
-      <div className="mt-10 space-y-9 rounded-[2.5rem] border-4 border-[#b98b43]/30 bg-white/65 p-7 text-[clamp(34px,4vw,58px)] font-semibold leading-[1.48] text-[#352719] sm:p-10 lg:p-14 [&_a]:font-black [&_a]:text-magenta-dark [&_a]:underline [&_h3]:mt-12 [&_h3]:font-display [&_h3]:text-[clamp(40px,5vw,72px)] [&_h3]:font-black [&_h3]:uppercase [&_h3]:leading-tight [&_h3]:text-purple-deep [&_li]:mb-5 [&_ul]:list-disc [&_ul]:space-y-4 [&_ul]:pl-[1.25em]">
+      <div className="mt-5 space-y-5 rounded-[1.25rem] border-2 border-[#b98b43]/30 bg-white/65 p-4 text-base font-semibold leading-relaxed text-[#352719] sm:p-6 sm:text-lg lg:mt-10 lg:space-y-9 lg:rounded-[2.5rem] lg:border-4 lg:p-14 lg:text-[clamp(34px,4vw,58px)] lg:leading-[1.48] [&_a]:font-black [&_a]:text-magenta-dark [&_a]:underline [&_h3]:mt-7 [&_h3]:font-display [&_h3]:text-2xl [&_h3]:font-black [&_h3]:uppercase [&_h3]:leading-tight [&_h3]:text-purple-deep lg:[&_h3]:mt-12 lg:[&_h3]:text-[clamp(40px,5vw,72px)] [&_li]:mb-3 lg:[&_li]:mb-5 [&_ul]:list-disc [&_ul]:space-y-3 lg:[&_ul]:space-y-4 [&_ul]:pl-[1.25em]">
         {children}
       </div>
     </section>

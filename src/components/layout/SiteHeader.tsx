@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, Smartphone, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { officialHeaderNav, routes } from "@/lib/site";
+import { homeImages, officialHeaderNav, routes, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navLinkClass = (isHome: boolean, active: boolean) =>
@@ -67,14 +68,35 @@ export function SiteHeader() {
       </div>
 
       {/* Mobile — hamburger */}
-      <div className="flex w-full items-center justify-end px-4 py-4 lg:hidden">
+      <div className="flex h-[var(--site-header-height,72px)] w-full items-center justify-between px-4 py-2 lg:hidden">
+        <Link
+          href={routes.home}
+          className="flex min-h-12 min-w-12 items-center gap-2 rounded-full focus:outline-none focus:ring-4 focus:ring-magenta-neon/30"
+          aria-label="Açaí Factory — Home"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src={homeImages.logo}
+            alt={siteConfig.name}
+            width={48}
+            height={48}
+            className="h-12 w-12 rounded-full object-cover shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
+            priority
+          />
+        </Link>
         <button
           type="button"
-          className={cn("shrink-0 rounded-md p-2", isHome ? "text-white" : "text-ink")}
+          className={cn(
+            "inline-flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-full border-2 p-2 shadow-sm",
+            isHome
+              ? "border-white/70 bg-black/20 text-white"
+              : "border-magenta-neon/25 bg-white text-ink"
+          )}
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
         >
-          {open ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
+          {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
         </button>
       </div>
 
@@ -85,14 +107,14 @@ export function SiteHeader() {
           open ? "max-h-[90vh] opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="max-h-[80vh] space-y-0.5 overflow-y-auto px-4 py-3">
+        <nav className="max-h-[calc(100dvh-var(--site-header-height,72px))] space-y-1 overflow-y-auto px-4 py-3">
           {officialHeaderNav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "block rounded-md px-3 py-3 font-display text-xl font-semibold",
+                "block rounded-2xl px-4 py-3.5 font-display text-xl font-extrabold uppercase tracking-wide",
                 isHome ? "text-white hover:bg-white/10" : "text-ink hover:bg-gray-100"
               )}
             >

@@ -45,7 +45,7 @@ export function HomeHero() {
   return (
     <section className="relative isolate z-0 w-full shrink-0 bg-magenta-neon" aria-label="Home hero">
       {/* 16:9 desktop — full width; CLEAN image when delivered */}
-      <div className="relative aspect-[16/9] w-full min-h-[540px]">
+      <div className="relative aspect-[16/9] w-full min-h-[680px] sm:min-h-[540px]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${homeAssets.heroClean}')` }}
@@ -56,7 +56,7 @@ export function HomeHero() {
         {/* Logo — ~5in, below header (+2.5in from prior position) */}
         <Link
           href={routes.home}
-          className="absolute left-[1.5%] top-[2.5in] z-[60] block shrink-0"
+          className="absolute left-4 top-20 z-[60] block shrink-0 sm:left-6 sm:top-24 lg:left-[1.5%] lg:top-[2.5in]"
           aria-label="Açaí Factory — Home"
         >
           <Image
@@ -64,45 +64,44 @@ export function HomeHero() {
             alt={siteConfig.name}
             width={480}
             height={480}
-            className="h-[5in] w-[5in] max-h-[min(5in,42vh)] max-w-[min(5in,42vh)] rounded-full object-cover shadow-[0_8px_40px_rgba(0,0,0,0.35)]"
+            className="h-28 w-28 rounded-full object-cover shadow-[0_8px_40px_rgba(0,0,0,0.35)] sm:h-36 sm:w-36 lg:h-[5in] lg:w-[5in] lg:max-h-[min(5in,42vh)] lg:max-w-[min(5in,42vh)]"
             priority
           />
         </Link>
 
         {/* Primary CTAs — larger and lowered to clear hero image text */}
         <div
-          className="absolute left-[5%] z-10 flex max-w-none flex-row flex-nowrap items-center gap-8 xl:left-[6%]"
-          style={{ bottom: "calc(2.25% - 0.333in)" }}
+          className="home-hero-primary-actions absolute inset-x-4 z-10 flex max-w-none flex-col items-stretch gap-3 sm:left-[5%] sm:right-auto sm:flex-row sm:flex-nowrap sm:items-center sm:gap-5 lg:gap-8 xl:left-[6%]"
         >
           <Link
             href={routes.menu}
-            className="inline-flex min-h-[9rem] items-center justify-center gap-[1.35rem] rounded-full bg-yellow px-[4.5rem] py-[2.25rem] font-display text-[2.65rem] font-extrabold uppercase tracking-wider text-ink shadow-[0_12px_48px_rgba(255,207,0,0.55)] transition hover:bg-yellow-deep xl:min-h-[9.75rem] xl:px-[5.25rem] xl:py-[2.5rem] xl:text-[3.1rem]"
+            className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-yellow px-6 py-4 font-display text-lg font-extrabold uppercase tracking-wider text-ink shadow-[0_12px_48px_rgba(255,207,0,0.55)] transition hover:bg-yellow-deep sm:min-h-16 sm:px-8 sm:text-xl lg:min-h-[9rem] lg:gap-[1.35rem] lg:px-[4.5rem] lg:py-[2.25rem] lg:text-[2.65rem] xl:min-h-[9.75rem] xl:px-[5.25rem] xl:py-[2.5rem] xl:text-[3.1rem]"
           >
             <Image
               src={homeImages.logo}
               alt=""
               width={96}
               height={96}
-              className="h-[4rem] w-[4rem] rounded-full object-cover xl:h-[5rem] xl:w-[5rem]"
+              className="h-8 w-8 rounded-full object-cover sm:h-10 sm:w-10 lg:h-[4rem] lg:w-[4rem] xl:h-[5rem] xl:w-[5rem]"
               aria-hidden
             />
             ORDER NOW
           </Link>
           <Link
             href={routes.app}
-            className="inline-flex min-h-[9rem] items-center justify-center gap-[1.35rem] rounded-full border-[3px] border-white bg-black/20 px-[4.5rem] py-[2.25rem] font-display text-[2.65rem] font-extrabold uppercase tracking-wider text-white shadow-[0_0_40px_rgba(255,20,147,0.5)] backdrop-blur-sm transition hover:bg-white hover:text-magenta-neon xl:min-h-[9.75rem] xl:px-[5.25rem] xl:py-[2.5rem] xl:text-[3.1rem]"
+            className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[3px] border-white bg-black/20 px-6 py-4 font-display text-lg font-extrabold uppercase tracking-wider text-white shadow-[0_0_40px_rgba(255,20,147,0.5)] backdrop-blur-sm transition hover:bg-white hover:text-magenta-neon sm:min-h-16 sm:px-8 sm:text-xl lg:min-h-[9rem] lg:gap-[1.35rem] lg:px-[4.5rem] lg:py-[2.25rem] lg:text-[2.65rem] xl:min-h-[9.75rem] xl:px-[5.25rem] xl:py-[2.5rem] xl:text-[3.1rem]"
           >
-            <Smartphone className="h-[4rem] w-[4rem] xl:h-[5rem] xl:w-[5rem]" aria-hidden />
+            <Smartphone className="h-8 w-8 sm:h-10 sm:w-10 lg:h-[4rem] lg:w-[4rem] xl:h-[5rem] xl:w-[5rem]" aria-hidden />
             DOWNLOAD APP
           </Link>
         </div>
 
         {/* Feature labels — below primary CTAs */}
-        <ul className="absolute bottom-[21%] left-[5%] z-10 flex flex-wrap gap-x-10 gap-y-4 xl:left-[6%]">
+        <ul className="absolute bottom-[10rem] left-4 right-4 z-10 flex flex-wrap gap-x-5 gap-y-3 sm:bottom-[21%] sm:left-[5%] sm:right-auto sm:gap-x-10 sm:gap-y-4 xl:left-[6%]">
           {features.map((f) => (
             <li
               key={f.label}
-              className="flex items-center gap-3 font-display text-base font-extrabold uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.85)] xl:text-lg"
+              className="flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.85)] sm:gap-3 sm:text-base xl:text-lg"
             >
               <span className="h-3 w-3 shrink-0 rounded-full bg-magenta-neon shadow-[0_0_12px_rgba(255,20,147,0.7)]" />
               {f.label}
@@ -113,7 +112,7 @@ export function HomeHero() {
         {/* Floating ORDER NOW — bottom-right (guide layout) */}
         <Link
           href={routes.menu}
-          className="text-ui-lg absolute bottom-[10%] right-[4%] z-10 inline-flex min-h-[60px] items-center justify-center gap-3 rounded-full bg-magenta-neon px-10 py-4 font-display text-lg font-extrabold uppercase tracking-wider text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 xl:min-h-[68px] xl:px-12 xl:text-xl"
+          className="text-ui-lg absolute right-4 top-20 z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-magenta-neon px-5 py-3 font-display text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:bottom-[10%] sm:right-[4%] sm:top-auto sm:min-h-[60px] sm:gap-3 sm:px-10 sm:py-4 sm:text-lg xl:min-h-[68px] xl:px-12 xl:text-xl"
         >
           <Image
             src={homeImages.logo}
@@ -128,11 +127,11 @@ export function HomeHero() {
       </div>
 
       {/* Social bar — full width magenta strip between hero and carousel (3× scale) */}
-      <div className="flex w-full items-center justify-center gap-[4.5rem] bg-magenta-neon px-[4.5rem] py-12 lg:gap-[6rem] lg:py-[3.75rem]">
-        <span className="font-display text-[3.375rem] font-extrabold uppercase leading-none tracking-widest text-white xl:text-[3.75rem]">
+      <div className="flex w-full flex-col items-center justify-center gap-5 bg-magenta-neon px-4 py-7 sm:flex-row sm:gap-8 sm:px-8 lg:gap-[6rem] lg:px-[4.5rem] lg:py-[3.75rem]">
+        <span className="font-display text-3xl font-extrabold uppercase leading-none tracking-widest text-white sm:text-4xl lg:text-[3.375rem] xl:text-[3.75rem]">
           Follow Us
         </span>
-        <nav aria-label="Social media" className="flex items-center gap-12 lg:gap-[3.75rem]">
+        <nav aria-label="Social media" className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-[3.75rem]">
           {socialLinks.map((link) => (
             <a
               key={link.label}
@@ -141,9 +140,9 @@ export function HomeHero() {
               rel="noopener noreferrer"
               aria-label={link.label}
               title={link.label}
-              className="flex h-36 w-36 cursor-pointer items-center justify-center rounded-full border-[6px] border-white/90 text-white transition hover:scale-105 hover:bg-white hover:text-magenta-neon focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white xl:h-[10.5rem] xl:w-[10.5rem]"
+              className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-[4px] border-white/90 text-white transition hover:scale-105 hover:bg-white hover:text-magenta-neon focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-20 sm:w-20 lg:h-36 lg:w-36 lg:border-[6px] xl:h-[10.5rem] xl:w-[10.5rem]"
             >
-              <SocialIcon name={link.label} className="h-[3.75rem] w-[3.75rem] xl:h-[4.5rem] xl:w-[4.5rem]" />
+              <SocialIcon name={link.label} className="h-7 w-7 sm:h-9 sm:w-9 lg:h-[3.75rem] lg:w-[3.75rem] xl:h-[4.5rem] xl:w-[4.5rem]" />
             </a>
           ))}
         </nav>

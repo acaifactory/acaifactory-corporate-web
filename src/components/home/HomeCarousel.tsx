@@ -37,7 +37,7 @@ export function HomeCarousel() {
     <section className="relative isolate z-10 w-full bg-black" aria-label="Home carousel">
       <Link
         href={slide.href}
-        className="relative block aspect-[16/9] w-full min-h-[540px] overflow-hidden"
+        className="relative block aspect-[16/9] w-full min-h-[220px] overflow-hidden sm:min-h-[320px] lg:min-h-[540px]"
         aria-label={`Ver más: ${slide.alt}`}
       >
         {slides.map((item, i) => (
@@ -62,20 +62,20 @@ export function HomeCarousel() {
             type="button"
             onClick={prev}
             aria-label="Slide anterior"
-            className="absolute left-6 top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 xl:left-8 xl:h-20 xl:w-20"
+            className="absolute left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:left-6 sm:h-16 sm:w-16 xl:left-8 xl:h-20 xl:w-20"
           >
-            <ChevronLeft className="h-9 w-9 xl:h-11 xl:w-11" />
+            <ChevronLeft className="h-7 w-7 sm:h-9 sm:w-9 xl:h-11 xl:w-11" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Slide siguiente"
-            className="absolute right-6 top-1/2 z-20 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 xl:right-8 xl:h-20 xl:w-20"
+            className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:right-6 sm:h-16 sm:w-16 xl:right-8 xl:h-20 xl:w-20"
           >
-            <ChevronRight className="h-9 w-9 xl:h-11 xl:w-11" />
+            <ChevronRight className="h-7 w-7 sm:h-9 sm:w-9 xl:h-11 xl:w-11" />
           </button>
 
-          <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-3">
+          <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-8 sm:gap-3">
             {slides.map((item, i) => (
               <button
                 key={item.id}

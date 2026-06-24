@@ -21,7 +21,7 @@ export function LocationsHero() {
           aria-label={`Abrir Google Maps para Açaí Factory ${store.city}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute inline-flex items-center justify-center rounded-full bg-magenta-neon px-3 text-center font-display font-extrabold uppercase leading-none tracking-wide text-white shadow-[0_5px_18px_rgba(226,0,122,0.38)] transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-magenta-neon"
+          className="absolute hidden items-center justify-center rounded-full bg-magenta-neon px-3 text-center font-display font-extrabold uppercase leading-none tracking-wide text-white shadow-[0_5px_18px_rgba(226,0,122,0.38)] transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-magenta-neon lg:inline-flex"
           style={{
             left: `${store.directionsButton.leftPercent}%`,
             top: `${store.directionsButton.topPercent}%`,
@@ -33,6 +33,21 @@ export function LocationsHero() {
           {store.directionsButton.label} &gt;
         </a>
       ))}
+
+      <div className="grid gap-4 bg-cream px-4 py-6 sm:grid-cols-3 sm:px-6 lg:hidden">
+        {locationsAssets.stores.map((store) => (
+          <a
+            key={store.id}
+            href={store.directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-16 items-center justify-center rounded-full bg-magenta-neon px-5 py-4 text-center font-display text-lg font-black uppercase leading-tight text-white shadow-[0_10px_28px_rgba(226,0,122,0.28)]"
+            aria-label={`Abrir Google Maps para Açaí Factory ${store.city}`}
+          >
+            Cómo llegar — {store.city}
+          </a>
+        ))}
+      </div>
     </section>
   );
 }

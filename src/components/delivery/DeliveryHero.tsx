@@ -60,7 +60,7 @@ export function DeliveryHero() {
       />
 
       <div
-        className="absolute inset-x-0 bottom-[2.5%] flex justify-center px-[6%] sm:bottom-[3%] lg:bottom-[3.5%]"
+        className="absolute inset-x-0 bottom-[2.5%] hidden justify-center px-[6%] sm:bottom-[3%] lg:flex lg:bottom-[3.5%]"
         aria-label="Ordenar delivery"
       >
         <div className="flex w-full max-w-[min(92vw,1960px)] gap-[3%] lg:max-w-[min(88vw,2200px)]">
@@ -79,6 +79,23 @@ export function DeliveryHero() {
             barClassName="bg-[#c41400]"
           />
         </div>
+      </div>
+
+      <div className="grid gap-4 bg-cream px-4 py-6 sm:grid-cols-2 sm:px-6 lg:hidden">
+        <DeliveryPartnerButton
+          href={deliveryAssets.uberEats}
+          label="Uber Eats"
+          partner="uber"
+          topClassName="bg-[#0b0b0b]"
+          barClassName="bg-[#8f1248]"
+        />
+        <DeliveryPartnerButton
+          href={deliveryAssets.doorDash}
+          label="DoorDash"
+          partner="doordash"
+          topClassName="bg-gradient-to-br from-[#ff3008] to-[#ff5c00]"
+          barClassName="bg-[#c41400]"
+        />
       </div>
     </section>
   );

@@ -57,7 +57,7 @@ export function FranchiseHero() {
       {franchiseAssets.buttons.map((button) => (
         <div
           key={button.id}
-          className="absolute z-20 box-border"
+          className="absolute z-20 hidden box-border lg:block"
           style={{
             left: button.left,
             top: button.top,
@@ -94,7 +94,7 @@ export function FranchiseHero() {
             setLanguage("es");
             setActiveStory(button.id as StoryId);
           }}
-          className="absolute z-30 flex flex-col items-center justify-center rounded-[0.75em] border-[0.16em] border-magenta-neon bg-magenta-neon px-[0.65em] text-center font-display font-extrabold uppercase leading-[1.05] text-white shadow-[0_8px_24px_rgba(34,5,50,0.38)] transition hover:-translate-y-0.5 hover:bg-magenta-dark focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="absolute z-30 hidden flex-col items-center justify-center rounded-[0.75em] border-[0.16em] border-magenta-neon bg-magenta-neon px-[0.65em] text-center font-display font-extrabold uppercase leading-[1.05] text-white shadow-[0_8px_24px_rgba(34,5,50,0.38)] transition hover:-translate-y-0.5 hover:bg-magenta-dark focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-white lg:flex"
           style={{
             top: button.top,
             right: button.right,
@@ -111,9 +111,37 @@ export function FranchiseHero() {
         </button>
       ))}
 
+      <div className="grid gap-4 bg-cream px-4 py-6 sm:grid-cols-2 lg:hidden">
+        {franchiseAssets.buttons.map((button) => (
+          <Link
+            key={button.id}
+            href={button.href}
+            className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-yellow px-5 py-4 text-center font-display text-lg font-black uppercase leading-tight text-ink shadow-[0_10px_28px_rgba(245,183,0,0.28)]"
+            aria-label={`${button.label} — ${button.id.replaceAll("-", " ")}`}
+          >
+            {button.label}
+            <ArrowRight className="h-6 w-6 shrink-0" strokeWidth={3} aria-hidden />
+          </Link>
+        ))}
+        {franchiseAssets.storyButtons.map((button) => (
+          <button
+            key={button.id}
+            type="button"
+            onClick={() => {
+              setLanguage("es");
+              setActiveStory(button.id as StoryId);
+            }}
+            className="flex min-h-16 flex-col items-center justify-center rounded-full bg-magenta-neon px-5 py-4 text-center font-display text-lg font-black uppercase leading-tight text-white shadow-[0_10px_28px_rgba(226,0,122,0.28)] sm:col-span-2"
+          >
+            <span>{button.label}</span>
+            <span className="text-sm">{button.secondaryLabel}</span>
+          </button>
+        ))}
+      </div>
+
       {story && content ? (
         <div
-          className="fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-purple-deep/88 p-3 backdrop-blur-md sm:p-6"
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-purple-deep/88 p-2 backdrop-blur-md sm:p-4 lg:p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby={dialogTitleId}
@@ -125,7 +153,7 @@ export function FranchiseHero() {
           data-franchise-ui={`story-dialog-${activeStory}`}
         >
           <article
-            className="relative my-auto w-full overflow-hidden rounded-[3.5rem] border-[10px] border-[#b98b43] bg-[#ead4a7] shadow-[0_40px_120px_rgba(18,3,28,0.6)]"
+            className="relative my-auto w-full overflow-hidden rounded-[1.25rem] border-4 border-[#b98b43] bg-[#ead4a7] shadow-[0_40px_120px_rgba(18,3,28,0.6)] lg:rounded-[3.5rem] lg:border-[10px]"
             style={{
               width: "min(99vw, 41.2in)",
               minHeight: "min(26in, calc(100vh - 0.25rem))",
@@ -145,7 +173,7 @@ export function FranchiseHero() {
             <button
               type="button"
               onClick={() => setActiveStory(null)}
-              className="absolute right-8 top-8 z-20 inline-flex size-[clamp(86px,8vw,132px)] items-center justify-center rounded-full bg-purple-deep text-white shadow-xl transition hover:scale-105 focus:outline-none focus:ring-[12px] focus:ring-yellow/40"
+              className="absolute right-4 top-4 z-20 inline-flex size-14 items-center justify-center rounded-full bg-purple-deep text-white shadow-xl transition hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow/40 lg:right-8 lg:top-8 lg:size-[clamp(86px,8vw,132px)] lg:focus:ring-[12px]"
               aria-label="Cerrar historia"
             >
               <X className="size-[55%]" strokeWidth={3} aria-hidden />
@@ -161,21 +189,21 @@ export function FranchiseHero() {
                 </div>
               </div>
 
-              <div className="m-2 flex min-h-0 flex-col rounded-[3rem] bg-[#fff8e9]/95 p-7 shadow-2xl backdrop-blur-sm sm:m-4 sm:p-12 lg:ml-0 lg:mr-4 lg:p-16">
-                <div className="shrink-0 pr-32">
-                  <p className="flex items-center gap-4 text-[clamp(30px,3.2vw,52px)] font-black uppercase tracking-[0.16em] text-magenta-dark">
+              <div className="m-2 flex min-h-0 flex-col rounded-[1rem] bg-[#fff8e9]/95 p-4 shadow-2xl backdrop-blur-sm sm:m-4 sm:p-6 lg:ml-0 lg:mr-4 lg:rounded-[3rem] lg:p-16">
+                <div className="shrink-0 pr-16 lg:pr-32">
+                  <p className="flex items-center gap-2 text-base font-black uppercase tracking-[0.16em] text-magenta-dark sm:text-lg lg:gap-4 lg:text-[clamp(30px,3.2vw,52px)]">
                     <Languages className="size-[1.25em]" aria-hidden />
                     Açaí Factory
                   </p>
                   <h2
                     id={dialogTitleId}
-                    className="mt-4 font-display text-[clamp(72px,9vw,132px)] font-black uppercase leading-[0.9] text-ink"
+                    className="mt-3 font-display text-3xl font-black uppercase leading-[0.95] text-ink sm:text-4xl lg:mt-4 lg:text-[clamp(72px,9vw,132px)] lg:leading-[0.9]"
                   >
                     {content.title}
                   </h2>
                 </div>
 
-                <div className="mt-9 flex shrink-0 flex-wrap gap-6" aria-label="Seleccionar idioma">
+                <div className="mt-5 flex shrink-0 flex-wrap gap-3 lg:mt-9 lg:gap-6" aria-label="Seleccionar idioma">
                   <LanguageButton
                     active={language === "es"}
                     onClick={() => setLanguage("es")}
@@ -190,8 +218,8 @@ export function FranchiseHero() {
                   </LanguageButton>
                 </div>
 
-                <div className="mt-9 min-h-0 flex-1 overflow-y-auto rounded-[2.5rem] border-4 border-[#b98b43]/35 bg-white/55 p-8 pr-10 sm:p-12">
-                  <div className="space-y-9 text-[clamp(38px,4.2vw,60px)] font-semibold leading-[1.48] text-[#352719]">
+                <div className="mt-5 min-h-0 flex-1 overflow-y-auto rounded-[1rem] border-2 border-[#b98b43]/35 bg-white/55 p-4 sm:p-5 lg:mt-9 lg:rounded-[2.5rem] lg:border-4 lg:p-12 lg:pr-10">
+                  <div className="space-y-5 text-base font-semibold leading-relaxed text-[#352719] sm:text-lg lg:space-y-9 lg:text-[clamp(38px,4.2vw,60px)] lg:leading-[1.48]">
                     {content.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
@@ -219,7 +247,7 @@ function LanguageButton({
     <button
       type="button"
       onClick={onClick}
-      className={`min-h-[104px] rounded-full border-[7px] px-14 text-[clamp(34px,3.7vw,54px)] font-black uppercase transition focus:outline-none focus:ring-[10px] focus:ring-yellow/35 ${
+      className={`min-h-12 rounded-full border-2 px-5 text-base font-black uppercase transition focus:outline-none focus:ring-4 focus:ring-yellow/35 sm:text-lg lg:min-h-[104px] lg:border-[7px] lg:px-14 lg:text-[clamp(34px,3.7vw,54px)] lg:focus:ring-[10px] ${
         active
           ? "border-magenta-neon bg-magenta-neon text-white"
           : "border-purple-deep bg-white text-purple-deep hover:bg-yellow"

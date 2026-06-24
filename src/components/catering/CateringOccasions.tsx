@@ -8,10 +8,10 @@ export function CateringOccasions() {
     >
       <div className="mx-auto max-w-[110rem]">
         <div className="mx-auto max-w-6xl text-center">
-          <p className="font-display text-[24pt] font-extrabold uppercase tracking-[0.18em] text-magenta-neon">
+          <p className="font-display text-base font-extrabold uppercase tracking-[0.18em] text-magenta-neon sm:text-lg lg:text-[24pt]">
             Catering para cada ocasión
           </p>
-          <h2 className="mt-5 font-display text-[52pt] font-extrabold uppercase leading-none text-ink">
+          <h2 className="mt-3 font-display text-3xl font-extrabold uppercase leading-none text-ink sm:text-4xl lg:mt-5 lg:text-[52pt]">
             Llevamos el sabor tropical a tu evento
           </h2>
         </div>
@@ -35,7 +35,7 @@ export function CateringOccasions() {
                 />
               </div>
               <div className="px-8 py-8 text-center">
-                <h3 className="font-display text-[34pt] font-extrabold uppercase leading-none text-purple">
+                <h3 className="font-display text-2xl font-extrabold uppercase leading-none text-purple sm:text-3xl lg:text-[34pt]">
                   {occasion.title}
                 </h3>
               </div>

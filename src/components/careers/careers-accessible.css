@@ -248,3 +248,91 @@
   color: #991b1b;
   background: #fef2f2;
 }
+
+@media (max-width: 1023px) {
+  .careers-modal-backdrop {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0.5rem;
+    overflow-y: auto;
+  }
+
+  .careers-modal {
+    width: min(100%, 42rem);
+    height: auto;
+    min-height: auto;
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100dvh - 1rem);
+    border-radius: 1.25rem;
+    font-size: 16px;
+  }
+
+  .careers-modal-scroll {
+    padding: 1.25rem;
+  }
+
+  .careers-modal-title {
+    padding-right: 3rem;
+    font-size: clamp(1.65rem, 7vw, 2.4rem);
+    line-height: 1;
+  }
+
+  .careers-modal-help,
+  .careers-label,
+  .careers-error {
+    font-size: 1rem;
+  }
+
+  .careers-form {
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .careers-field-wrap {
+    height: 3.5rem;
+  }
+
+  .careers-textarea-wrap {
+    height: 7.5rem;
+  }
+
+  .careers-input,
+  .careers-file,
+  .careers-textarea {
+    padding-left: 3.1rem;
+    padding-right: 1rem;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .careers-file {
+    padding-left: 1rem;
+  }
+
+  .careers-file::file-selector-button {
+    height: 70%;
+    margin-right: 0.5rem;
+    padding: 0 0.75rem;
+    border-radius: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .careers-field-icon {
+    left: 1rem;
+  }
+
+  .careers-submit {
+    min-height: 3.5rem;
+    height: auto;
+    border-radius: 9999px;
+    font-size: 1.05rem;
+  }
+
+  .careers-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: #fff4fb;
+  }
+}

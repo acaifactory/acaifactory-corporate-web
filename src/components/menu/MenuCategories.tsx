@@ -43,7 +43,7 @@ export function MenuCategories() {
         aria-label="Categorías del menú"
         className="sticky top-[var(--site-header-height,7rem)] z-40 border-b border-gray-200 bg-white/95 backdrop-blur-sm"
       >
-        <div className="mx-auto flex w-full max-w-[1920px] flex-wrap items-stretch justify-center gap-4 px-6 py-8 sm:gap-8 sm:px-8 sm:py-10 lg:px-10">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-wrap items-stretch justify-center gap-3 px-4 py-5 sm:gap-8 sm:px-8 sm:py-10 lg:px-10">
           {menuCategories.map((category) => {
             const selected = category.id === activeId;
             return (
@@ -56,7 +56,7 @@ export function MenuCategories() {
                 aria-controls={`menu-panel-${category.id}`}
                 onClick={() => selectCategory(category.id)}
                 className={cn(
-                  "font-display min-w-[30rem] flex-1 rounded-full px-12 py-8 text-[2.8rem] font-extrabold uppercase leading-none tracking-wide transition sm:min-w-0 sm:flex-none sm:px-20 sm:py-10 sm:text-[3rem] lg:text-[3.5rem]",
+                  "font-display w-full min-w-0 flex-1 rounded-full px-6 py-4 text-2xl font-extrabold uppercase leading-none tracking-wide transition sm:w-auto sm:flex-none sm:px-20 sm:py-10 sm:text-[3rem] lg:text-[3.5rem]",
                   selected
                     ? "bg-magenta-neon text-white shadow-[0_16px_64px_rgba(255,20,147,0.35)]"
                     : "bg-gray-100 text-ink hover:bg-gray-200"

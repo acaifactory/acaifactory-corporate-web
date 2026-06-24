@@ -26,7 +26,7 @@ export function CareersHero() {
         />
 
         <div
-          className="absolute z-20 box-border"
+          className="absolute z-20 hidden box-border lg:block"
           style={{
             top: slot.top,
             right: slot.right,
@@ -46,6 +46,17 @@ export function CareersHero() {
           </button>
         </div>
       </section>
+
+      <div className="bg-cream px-4 py-6 lg:hidden">
+        <button
+          type="button"
+          onClick={() => setFormOpen(true)}
+          aria-haspopup="dialog"
+          className="flex min-h-16 w-full items-center justify-center rounded-full bg-magenta-neon px-6 py-4 text-center font-display text-xl font-black uppercase leading-tight text-white shadow-[0_10px_28px_rgba(226,0,122,0.28)]"
+        >
+          Aplicar ahora
+        </button>
+      </div>
 
       {formOpen ? (
         <CareersApplicationForm open onClose={() => setFormOpen(false)} />

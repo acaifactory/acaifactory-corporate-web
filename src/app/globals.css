@@ -60,6 +60,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
 /* ─── Official site header — ONE line, left at 1in, edge-to-edge, fluid large text ─── */
 .site-header {
   left: 0;
@@ -137,6 +144,59 @@ body {
 .site-header-btn-icon {
   width: var(--header-btn-icon);
   height: var(--header-btn-icon);
+}
+
+.home-hero-primary-actions {
+  bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .home-hero-primary-actions {
+    bottom: calc(2.25% - 0.333in);
+  }
+}
+
+/* Mobile/tablet responsive layer — desktop remains controlled by the approved desktop rules above. */
+@media (max-width: 1023px) {
+  :root {
+    --mobile-safe-gap: max(1rem, env(safe-area-inset-left));
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    --site-header-height: 72px;
+  }
+
+  main[class*="pt-\[calc\(var\(--site-header-height"] {
+    padding-top: calc(var(--site-header-height, 72px) + 0.75rem) !important;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  input,
+  select,
+  textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    --site-header-height: 64px;
+  }
 }
 
 /* Desktop UI text — strictly larger than 14 points (~18.67px) */
