@@ -45,9 +45,17 @@ export function HomeHero() {
   return (
     <section className="relative isolate z-0 w-full shrink-0 bg-magenta-neon" aria-label="Home hero">
       {/* 16:9 desktop — full width; CLEAN image when delivered */}
-      <div className="relative aspect-[16/9] w-full min-h-[680px] sm:min-h-[540px]">
+      <div className="relative w-full overflow-hidden bg-magenta-neon lg:aspect-[16/9] lg:min-h-[540px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={homeAssets.heroClean}
+          alt="Açaí Factory — A Taste of Brasil"
+          className="block h-auto w-full lg:hidden"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat lg:block"
           style={{ backgroundImage: `url('${homeAssets.heroClean}')` }}
           role="img"
           aria-label="Açaí Factory — A Taste of Brasil"
@@ -56,7 +64,7 @@ export function HomeHero() {
         {/* Logo — ~5in, below header (+2.5in from prior position) */}
         <Link
           href={routes.home}
-          className="absolute left-4 top-20 z-[60] block shrink-0 sm:left-6 sm:top-24 lg:left-[1.5%] lg:top-[2.5in]"
+          className="absolute left-4 top-20 z-[60] hidden shrink-0 sm:left-6 sm:top-24 lg:left-[1.5%] lg:top-[2.5in] lg:block"
           aria-label="Açaí Factory — Home"
         >
           <Image
@@ -71,7 +79,7 @@ export function HomeHero() {
 
         {/* Primary CTAs — larger and lowered to clear hero image text */}
         <div
-          className="home-hero-primary-actions absolute inset-x-4 z-10 flex max-w-none flex-col items-stretch gap-3 sm:left-[5%] sm:right-auto sm:flex-row sm:flex-nowrap sm:items-center sm:gap-5 lg:gap-8 xl:left-[6%]"
+          className="home-hero-primary-actions absolute inset-x-4 z-10 hidden max-w-none flex-col items-stretch gap-3 sm:left-[5%] sm:right-auto sm:flex-row sm:flex-nowrap sm:items-center sm:gap-5 lg:flex lg:gap-8 xl:left-[6%]"
         >
           <Link
             href={routes.menu}
@@ -97,7 +105,7 @@ export function HomeHero() {
         </div>
 
         {/* Feature labels — below primary CTAs */}
-        <ul className="absolute bottom-[10rem] left-4 right-4 z-10 flex flex-wrap gap-x-5 gap-y-3 sm:bottom-[21%] sm:left-[5%] sm:right-auto sm:gap-x-10 sm:gap-y-4 xl:left-[6%]">
+        <ul className="absolute bottom-[10rem] left-4 right-4 z-10 hidden flex-wrap gap-x-5 gap-y-3 sm:bottom-[21%] sm:left-[5%] sm:right-auto sm:gap-x-10 sm:gap-y-4 lg:flex xl:left-[6%]">
           {features.map((f) => (
             <li
               key={f.label}
@@ -112,7 +120,7 @@ export function HomeHero() {
         {/* Floating ORDER NOW — bottom-right (guide layout) */}
         <Link
           href={routes.menu}
-          className="text-ui-lg absolute right-4 top-20 z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-magenta-neon px-5 py-3 font-display text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:bottom-[10%] sm:right-[4%] sm:top-auto sm:min-h-[60px] sm:gap-3 sm:px-10 sm:py-4 sm:text-lg xl:min-h-[68px] xl:px-12 xl:text-xl"
+          className="text-ui-lg absolute right-4 top-20 z-10 hidden min-h-12 items-center justify-center gap-2 rounded-full bg-magenta-neon px-5 py-3 font-display text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:bottom-[10%] sm:right-[4%] sm:top-auto sm:min-h-[60px] sm:gap-3 sm:px-10 sm:py-4 sm:text-lg lg:inline-flex xl:min-h-[68px] xl:px-12 xl:text-xl"
         >
           <Image
             src={homeImages.logo}
@@ -124,6 +132,44 @@ export function HomeHero() {
           />
           ORDER NOW
         </Link>
+      </div>
+
+      <div className="bg-magenta-neon px-4 py-5 lg:hidden">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href={routes.menu}
+            className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-yellow px-5 py-3 font-display text-base font-extrabold uppercase tracking-wider text-ink shadow-[0_8px_24px_rgba(255,207,0,0.4)] transition hover:bg-yellow-deep"
+          >
+            <Image
+              src={homeImages.logo}
+              alt=""
+              width={40}
+              height={40}
+              className="h-8 w-8 rounded-full object-cover"
+              aria-hidden
+            />
+            ORDER NOW
+          </Link>
+          <Link
+            href={routes.app}
+            className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border-2 border-white bg-black/15 px-5 py-3 font-display text-base font-extrabold uppercase tracking-wider text-white shadow-[0_0_24px_rgba(255,20,147,0.35)] backdrop-blur-sm transition hover:bg-white hover:text-magenta-neon"
+          >
+            <Smartphone className="h-7 w-7" aria-hidden />
+            DOWNLOAD APP
+          </Link>
+        </div>
+
+        <ul className="mt-4 grid gap-2 text-white sm:grid-cols-3">
+          {features.map((f) => (
+            <li
+              key={f.label}
+              className="flex items-center gap-2 font-display text-sm font-extrabold uppercase tracking-wide [text-shadow:0_2px_10px_rgba(0,0,0,0.4)]"
+            >
+              <span className="h-3 w-3 shrink-0 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.65)]" />
+              {f.label}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Social bar — full width magenta strip between hero and carousel (3× scale) */}

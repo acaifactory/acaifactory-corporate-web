@@ -15,13 +15,13 @@ export function SiteFooter() {
         </div>
         <nav
           aria-label="Legal information"
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-4 xl:grid-cols-4"
         >
           {legalLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="inline-flex min-h-[88px] items-center justify-center rounded-full border-2 border-magenta-neon/20 bg-white px-8 py-5 text-center text-[clamp(20pt,2.35vw,36pt)] font-black leading-tight text-purple-deep shadow-[0_8px_24px_rgba(74,18,136,0.08)] transition hover:border-magenta-neon hover:bg-magenta-neon hover:text-white focus:outline-none focus:ring-8 focus:ring-magenta-neon/20"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-magenta-neon/20 bg-white px-5 py-3 text-center text-base font-black leading-tight text-purple-deep shadow-[0_8px_24px_rgba(74,18,136,0.08)] transition hover:border-magenta-neon hover:bg-magenta-neon hover:text-white focus:outline-none focus:ring-4 focus:ring-magenta-neon/20 sm:text-lg lg:min-h-[88px] lg:px-8 lg:py-5 lg:text-[clamp(20pt,2.35vw,36pt)] lg:focus:ring-8"
             >
               {link.label}
             </Link>
