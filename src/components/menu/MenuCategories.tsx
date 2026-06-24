@@ -73,7 +73,7 @@ export function MenuCategories() {
         role="tabpanel"
         id={`menu-panel-${active.id}`}
         aria-labelledby={`menu-tab-${active.id}`}
-        className="w-full bg-white pt-4 sm:pt-5 lg:pt-0"
+        className="w-full bg-white pt-7 sm:pt-8 lg:pt-0"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
