@@ -59,7 +59,7 @@ export function SiteHeader() {
           </Link>
 
           <Link
-            href={routes.menu}
+            href={routes.order}
             className="site-header-btn-primary inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border-yellow bg-yellow font-display font-extrabold uppercase tracking-wide text-ink shadow-[0_4px_18px_rgba(255,207,0,0.4)] transition hover:bg-yellow-deep"
           >
             Order Now
@@ -133,7 +133,7 @@ export function SiteHeader() {
               Download App
             </Link>
             <Link
-              href={routes.menu}
+              href={routes.order}
               onClick={() => setOpen(false)}
               className="block rounded-full bg-yellow px-6 py-4 text-center font-display text-xl font-extrabold uppercase tracking-wider text-ink"
             >

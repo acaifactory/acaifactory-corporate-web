@@ -35,7 +35,7 @@ export const locationsAssets = {
       address: "Can. #2, Plaza Bayamón, Bayamón, PR 00961",
       phone: "(787) 619-5485",
       directionsUrl: googleMapsDirections("Açaí Factory Plaza Bayamón, Bayamón, PR 00961"),
-      orderHref: routes.menu,
+      orderHref: routes.order,
       directionsButton: {
         ...directionsButtonBase,
         leftPercent: widthPercent(198),
@@ -47,7 +47,7 @@ export const locationsAssets = {
       address: "Carr. #888, Parque Real, Cataño, PR 00962",
       phone: "(787) 619-5485",
       directionsUrl: googleMapsDirections("Açaí Factory Parque Real, Cataño, PR 00962"),
-      orderHref: routes.menu,
+      orderHref: routes.order,
       directionsButton: {
         ...directionsButtonBase,
         leftPercent: widthPercent(755),
@@ -59,7 +59,7 @@ export const locationsAssets = {
       address: "Carr. #159, Parozal Town Center, Corozal, PR 00783",
       phone: "(787) 619-5485",
       directionsUrl: googleMapsDirections("Açaí Factory Parozal Town Center, Corozal, PR 00783"),
-      orderHref: routes.menu,
+      orderHref: routes.order,
       directionsButton: {
         ...directionsButtonBase,
         leftPercent: widthPercent(1317),

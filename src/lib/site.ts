@@ -9,6 +9,7 @@ export const siteConfig = {
 export const routes = {
   home: "/",
   menu: "/menu",
+  order: "https://acai-factory-ordering-app.vercel.app",
   app: "/app",
   account: "/account",
 } as const;

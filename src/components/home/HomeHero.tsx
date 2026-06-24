@@ -82,7 +82,7 @@ export function HomeHero() {
           className="home-hero-primary-actions absolute inset-x-4 z-10 hidden max-w-none flex-col items-stretch gap-3 sm:left-[5%] sm:right-auto sm:flex-row sm:flex-nowrap sm:items-center sm:gap-5 lg:flex lg:gap-8 xl:left-[6%]"
         >
           <Link
-            href={routes.menu}
+            href={routes.order}
             className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-yellow px-6 py-4 font-display text-lg font-extrabold uppercase tracking-wider text-ink shadow-[0_12px_48px_rgba(255,207,0,0.55)] transition hover:bg-yellow-deep sm:min-h-16 sm:px-8 sm:text-xl lg:min-h-[9rem] lg:gap-[1.35rem] lg:px-[4.5rem] lg:py-[2.25rem] lg:text-[2.65rem] xl:min-h-[9.75rem] xl:px-[5.25rem] xl:py-[2.5rem] xl:text-[3.1rem]"
           >
             <Image
@@ -119,7 +119,7 @@ export function HomeHero() {
 
         {/* Floating ORDER NOW — bottom-right (guide layout) */}
         <Link
-          href={routes.menu}
+          href={routes.order}
           className="text-ui-lg absolute right-4 top-20 z-10 hidden min-h-12 items-center justify-center gap-2 rounded-full bg-magenta-neon px-5 py-3 font-display text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:bottom-[10%] sm:right-[4%] sm:top-auto sm:min-h-[60px] sm:gap-3 sm:px-10 sm:py-4 sm:text-lg lg:inline-flex xl:min-h-[68px] xl:px-12 xl:text-xl"
         >
           <Image
@@ -137,7 +137,7 @@ export function HomeHero() {
       <div className="bg-magenta-neon px-4 py-5 lg:hidden">
         <div className="grid gap-3 sm:grid-cols-2">
           <Link
-            href={routes.menu}
+            href={routes.order}
             className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-yellow px-5 py-3 font-display text-base font-extrabold uppercase tracking-wider text-ink shadow-[0_8px_24px_rgba(255,207,0,0.4)] transition hover:bg-yellow-deep"
           >
             <Image
