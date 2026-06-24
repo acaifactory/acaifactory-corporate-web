@@ -62,20 +62,20 @@ export function HomeCarousel() {
             type="button"
             onClick={prev}
             aria-label="Slide anterior"
-            className="absolute left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:left-6 sm:h-16 sm:w-16 xl:left-8 xl:h-20 xl:w-20"
+            className="absolute left-2 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_20px_rgba(255,20,147,0.55)] transition hover:scale-105 sm:left-4 sm:h-11 sm:w-11 md:h-12 md:w-12 lg:left-6 lg:h-16 lg:w-16 xl:left-8 xl:h-20 xl:w-20"
           >
-            <ChevronLeft className="h-7 w-7 sm:h-9 sm:w-9 xl:h-11 xl:w-11" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-9 lg:w-9 xl:h-11 xl:w-11" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Slide siguiente"
-            className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_28px_rgba(255,20,147,0.65)] transition hover:scale-105 sm:right-6 sm:h-16 sm:w-16 xl:right-8 xl:h-20 xl:w-20"
+            className="absolute right-2 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-magenta-neon text-white shadow-[0_0_20px_rgba(255,20,147,0.55)] transition hover:scale-105 sm:right-4 sm:h-11 sm:w-11 md:h-12 md:w-12 lg:right-6 lg:h-16 lg:w-16 xl:right-8 xl:h-20 xl:w-20"
           >
-            <ChevronRight className="h-7 w-7 sm:h-9 sm:w-9 xl:h-11 xl:w-11" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-9 lg:w-9 xl:h-11 xl:w-11" />
           </button>
 
-          <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-8 sm:gap-3">
+          <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2 lg:bottom-8 lg:gap-3">
             {slides.map((item, i) => (
               <button
                 key={item.id}
@@ -83,10 +83,10 @@ export function HomeCarousel() {
                 aria-label={`Ir al slide ${i + 1}`}
                 onClick={() => setIndex(i)}
                 className={cn(
-                  "h-3.5 rounded-full transition-all",
+                  "h-2 rounded-full transition-all sm:h-2.5 lg:h-3.5",
                   i === index
-                    ? "w-12 bg-yellow shadow-[0_0_16px_rgba(255,207,0,0.75)]"
-                    : "w-3.5 bg-white/75 hover:bg-white"
+                    ? "w-7 bg-yellow shadow-[0_0_12px_rgba(255,207,0,0.65)] sm:w-9 lg:w-12 lg:shadow-[0_0_16px_rgba(255,207,0,0.75)]"
+                    : "w-2 bg-white/75 hover:bg-white sm:w-2.5 lg:w-3.5"
                 )}
               />
             ))}
