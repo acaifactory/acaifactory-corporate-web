@@ -1,0 +1,36 @@
+export const accountAssets = {
+  hero: {
+    src: "/marketing/account/my-account-background.jpg",
+    alt: "Açaí Factory account welcome screen with rewards, order history, offers, and profile benefits",
+    width: 1920,
+    height: 1080,
+  },
+  guestActionSlot: {
+    top: "1.5%",
+    right: "1.5%",
+    width: "48%",
+  },
+  heroActionSpec: {
+    minHeight: "clamp(64px, 9vw, 1.65in)",
+    fontSize: "clamp(18px, 3vw, 36pt)",
+    horizontalPadding: "clamp(14px, 2.5vw, 0.55in)",
+    borderWidth: "clamp(4px, 0.55vw, 10px)",
+    gap: "clamp(10px, 1.2vw, 0.25in)",
+  },
+  formSpec: {
+    width: "min(95vw, 20.6in)",
+    minHeight: "min(13in, calc(100vh - 1rem))",
+    maxHeight: "calc(100vh - 1rem)",
+    padding: "clamp(2rem, 4vw, 4.625rem)",
+    eyebrowFontSize: "31pt",
+    titleFontSize: "clamp(54pt, 7vw, 87pt)",
+    descriptionFontSize: "clamp(26pt, 3.6vw, 36pt)",
+    labelFontSize: "clamp(22pt, 2.8vw, 28pt)",
+    fieldFontSize: "clamp(27pt, 3.6vw, 36pt)",
+    fieldPaddingY: "clamp(1.35rem, 2.4vw, 2.375rem)",
+    fieldPaddingX: "clamp(1.5rem, 2.6vw, 2.575rem)",
+    submitFontSize: "clamp(30pt, 4.1vw, 41pt)",
+    closeFontSize: "clamp(28pt, 3.9vw, 39pt)",
+    formGap: "clamp(1.5rem, 2.6vw, 2.575rem)",
+  },
+} as const;

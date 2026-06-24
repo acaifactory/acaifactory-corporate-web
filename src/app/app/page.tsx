@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { AppSection } from "@/components/sections/AppSection";
+import { UnderConstruction } from "@/components/UnderConstruction";
+import { getSitePage } from "@/lib/pages";
+
+const page = getSitePage("app");
 
 export const metadata: Metadata = {
-  title: "App",
-  description: "Descarga la app de Açaí Factory. Ordena rápido, acumula puntos y recibe promociones exclusivas.",
+  title: page.title,
 };
 
 export default function AppPage() {
   return (
-    <div className="pt-28">
-      <AppSection />
-    </div>
+    <UnderConstruction
+      title={page.title}
+      pageNumber={page.pageNumber}
+      flower={page.flower}
+    />
   );
 }

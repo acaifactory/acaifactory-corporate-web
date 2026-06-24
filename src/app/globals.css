@@ -1,10 +1,12 @@
 @import "tailwindcss";
+@import "../components/careers/careers-accessible.css";
 
 :root {
   --magenta: #ec008c;
+  --magenta-neon: #ff1493;
   --magenta-hot: #ff1493;
-  --magenta-dark: #a80062;
-  --magenta-glow: rgba(236, 0, 140, 0.45);
+  --magenta-dark: #c4006e;
+  --magenta-glow: rgba(255, 20, 147, 0.55);
   --yellow: #ffcf00;
   --yellow-deep: #f5b700;
   --yellow-glow: rgba(255, 207, 0, 0.35);
@@ -23,6 +25,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-magenta: var(--magenta);
+  --color-magenta-neon: var(--magenta-neon);
   --color-magenta-hot: var(--magenta-hot);
   --color-magenta-dark: var(--magenta-dark);
   --color-yellow: var(--yellow);
@@ -51,9 +54,102 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px; /* minimum — always above 14pt web equivalent */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Official site header — ONE line, left at 1in, edge-to-edge, fluid large text ─── */
+.site-header {
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  --header-offset-left: 1in;
+  --header-offset-right: 0.5in;
+  /* Desktop nav readability trial — 36pt, kept in one nowrap line. */
+  --header-nav-size: 36pt;
+  --header-btn-font: 32pt;
+  --header-gap: 4ch;
+  --header-pad-y: calc(clamp(10px, 0.75vw, 18px) + 2pt);
+  --header-btn-pad-y: clamp(7px, 0.5vw, 12px);
+  --header-btn-pad-x: clamp(10px, 0.75vw, 20px);
+  --header-btn-icon: clamp(18px, 1vw, 24px);
+  --site-header-height: calc(var(--header-pad-y) * 2 + var(--header-btn-pad-y) * 2 + var(--header-btn-font) * 1.15);
+}
+
+.site-header-bar {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 20, 147, 0.45) transparent;
+}
+
+.site-header-bar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.site-header-bar::-webkit-scrollbar-thumb {
+  background: rgba(255, 20, 147, 0.45);
+  border-radius: 999px;
+}
+
+.site-header-nav {
+  display: inline-flex;
+  width: max-content;
+  min-width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--header-gap);
+  padding-top: var(--header-pad-y);
+  padding-bottom: var(--header-pad-y);
+  padding-left: var(--header-offset-left);
+  padding-right: var(--header-offset-right);
+  margin: 0;
+}
+
+.site-header-link {
+  font-size: var(--header-nav-size);
+  line-height: 1.1;
+  padding: 0;
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.site-header-btn-outline,
+.site-header-btn-primary {
+  font-size: var(--header-btn-font);
+  line-height: 1;
+  padding: var(--header-btn-pad-y) var(--header-btn-pad-x);
+  border-width: clamp(3px, 0.225vw, 4.5px);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.site-header-btn-icon {
+  width: var(--header-btn-icon);
+  height: var(--header-btn-icon);
+}
+
+/* Desktop UI text — strictly larger than 14 points (~18.67px) */
+@media (min-width: 1024px) {
+  .text-ui {
+    font-size: 19px;
+    line-height: 1.45;
+  }
+
+  .text-ui-lg {
+    font-size: 22px;
+    line-height: 1.4;
+  }
 }
 
 ::selection {

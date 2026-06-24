@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
-import { homeMetadata } from "@/lib/seo";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { PromotionsSection } from "@/components/sections/PromotionsSection";
-import { MenuPreviewSection } from "@/components/sections/MenuPreviewSection";
-import { RewardsSection } from "@/components/sections/RewardsSection";
-import { AppSection } from "@/components/sections/AppSection";
-import { DeliveryLocationsSection } from "@/components/sections/DeliveryLocationsSection";
-import { CommunitySection } from "@/components/sections/CommunitySection";
+import { HomeHero } from "@/components/home/HomeHero";
+import { HomeCarousel } from "@/components/home/HomeCarousel";
+import { getSitePage } from "@/lib/pages";
 
-export const metadata: Metadata = homeMetadata;
+const page = getSitePage("home");
+
+export const metadata: Metadata = {
+  title: page.title,
+  description:
+    "Handcrafted Açaí bowls made with real fruit, premium ingredients and a whole lot of love. A Taste of Brasil.",
+};
 
 export default function HomePage() {
   return (
-    <>
-      <HeroSection />
-      <PromotionsSection />
-      <MenuPreviewSection />
-      <RewardsSection />
-      <AppSection />
-      <DeliveryLocationsSection />
-      <CommunitySection />
-    </>
+    <div className="relative flex flex-col">
+      <HomeHero />
+      <HomeCarousel />
+    </div>
   );
 }

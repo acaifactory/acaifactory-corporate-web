@@ -1,59 +1,65 @@
 export const siteConfig = {
   name: "Açaí Factory",
   slogan: "A Taste of Brasil",
-  description:
-    "Bowls premium de açaí, smoothies tropicales y experiencias de bienestar. La cadena de açaí con visión nacional e internacional — energía, frescura y sabor Brasil en cada visita.",
+  description: "Açaí Factory corporate website",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://acaifactory-corporate-web.vercel.app",
-  contactEmail: "acaifactorypr@gmail.com",
-  phone: "(787) 000-0000",
-  orderingUrl: process.env.NEXT_PUBLIC_ORDERING_URL || "/menu",
-  rewardsUrl: process.env.NEXT_PUBLIC_REWARDS_URL || "/rewards",
-  appStoreUrl: process.env.NEXT_PUBLIC_APP_STORE_URL || "/app",
-  playStoreUrl: process.env.NEXT_PUBLIC_PLAY_STORE_URL || "/app",
-  instagramUrl:
-    process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
-    "https://www.instagram.com/acaifactorypr/",
-  facebookUrl: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/",
-  doorDashUrl: process.env.NEXT_PUBLIC_DOORDASH_URL || "/delivery",
-  uberEatsUrl: process.env.NEXT_PUBLIC_UBER_EATS_URL || "/delivery",
-  rewards: {
-    pointsPerDollar: 1,
-    goal: 90,
-    prize: "$9.00 Reward Credit",
-    birthdayPerk: "Oferta especial de cumpleaños solo para miembros",
-    exclusiveDeals: "Promociones y sorpresas que no verás en tienda",
-  },
 } as const;
 
-export const navLinks = [
-  { href: "/promotions", label: "Promociones" },
+/** Functional routes — every CTA must use these. */
+export const routes = {
+  home: "/",
+  menu: "/menu",
+  app: "/app",
+  account: "/account",
+} as const;
+
+/**
+ * OFFICIAL HEADER NAV — fixed order, all pages.
+ * Do not remove or reorder without client approval.
+ */
+export const officialHeaderNav = [
+  { href: "/", label: "Home" },
+  { href: "/offers", label: "Promociones" },
   { href: "/rewards", label: "Rewards" },
   { href: "/menu", label: "Menú" },
   { href: "/delivery", label: "Delivery" },
   { href: "/locations", label: "Ubicaciones" },
   { href: "/catering", label: "Catering" },
-  { href: "/franchises", label: "Franquicias" },
-  { href: "/app", label: "App" },
-  { href: "/community", label: "Comunidad" },
-  { href: "/contact", label: "Contacto" },
-  { href: "/support", label: "Soporte" },
+  { href: "/franchise", label: "Franquicias" },
+  { href: "/careers", label: "Employment" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/account", label: "My Account" },
 ] as const;
 
-export function orderingLink(productId?: string) {
-  const base = siteConfig.orderingUrl;
-  if (base.startsWith("#") || base.startsWith("/")) {
-    return productId ? `/menu/${productId}` : base === "#order" ? "/menu" : base;
-  }
-  if (!productId) return base;
-  try {
-    const url = new URL(base);
-    url.searchParams.set("product", productId);
-    return url.toString();
-  } catch {
-    return base;
-  }
-}
+/** @deprecated Use officialHeaderNav — kept as alias for sitemap/legacy imports */
+export const navLinks = officialHeaderNav;
 
-export function isExternalUrl(url: string) {
-  return url.startsWith("http");
-}
+export const legalLinks = [
+  { href: "/legal-information#terms-and-conditions", label: "Terms & Conditions" },
+  { href: "/legal-information#privacy-policy", label: "Privacy Policy" },
+  { href: "/legal-information#disclaimer", label: "Disclaimer" },
+  { href: "/legal-information#website-use-policy", label: "Website Use Policy" },
+] as const;
+
+export const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/acaifactorypr/",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/acaifactorypr/",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@acaifactorypr",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@acaifactorypr",
+  },
+] as const;
+
+export const homeImages = {
+  logo: "/brand/logo.png",
+} as const;

@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import MenuPageClient from "@/components/menu/MenuPageClient";
+import { MenuCategories } from "@/components/menu/MenuCategories";
+import { getSitePage } from "@/lib/pages";
+
+const page = getSitePage("menu");
 
 export const metadata: Metadata = {
-  title: "Menú",
+  title: page.title,
   description:
-    "Signature Bowls, Premium Bowls, Coco & Mango, smoothies, frappés y más. El menú completo de Açaí Factory — ordena tu experiencia tropical.",
-  alternates: { canonical: "/menu" },
+    "Menú Açaí Factory — Signature Bowls, Baby & Chia, Drinks y Coco & Mango.",
 };
 
 export default function MenuPage() {
-  return <MenuPageClient />;
+  return (
+    <main className="pt-[calc(var(--site-header-height,7rem)+1.25rem+0.5in)]">
+      <MenuCategories />
+    </main>
+  );
 }
