@@ -5,10 +5,34 @@ import { getSitePage } from "@/lib/pages";
 const page = getSitePage("offers");
 
 const mobilePromotionPanels = [
-  { id: "top-left", label: "Promoción Açaí Factory 1", position: "0% 0%" },
-  { id: "top-right", label: "Promoción Açaí Factory 2", position: "100% 0%" },
-  { id: "bottom-left", label: "Promoción Açaí Factory 3", position: "0% 100%" },
-  { id: "bottom-right", label: "Promoción Açaí Factory 4", position: "100% 100%" },
+  {
+    id: "miercoles-duo",
+    src: "/marketing/offers/mobile/miercoles-duo.jpg",
+    alt: "Promoción Açaí Factory — Miércoles de Dúo",
+    width: 2071,
+    height: 825,
+  },
+  {
+    id: "viernes-acai",
+    src: "/marketing/offers/mobile/viernes-acai.jpg",
+    alt: "Promoción Açaí Factory — Viernes de Açaí 15% off",
+    width: 2060,
+    height: 825,
+  },
+  {
+    id: "rewards-program",
+    src: "/marketing/offers/mobile/rewards-program.jpg",
+    alt: "Promoción Açaí Factory — Rewards Program",
+    width: 2071,
+    height: 665,
+  },
+  {
+    id: "citizen-special",
+    src: "/marketing/offers/mobile/citizen-special.jpg",
+    alt: "Promoción Açaí Factory — Citizen Special 10% off",
+    width: 2060,
+    height: 665,
+  },
 ] as const;
 
 export const metadata: Metadata = {
@@ -32,17 +56,15 @@ export default function OffersPage() {
         />
         <div className="grid gap-4 bg-white px-4 py-4 sm:px-6 lg:hidden">
           {mobilePromotionPanels.map((panel) => (
-            <div
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               key={panel.id}
-              role="img"
-              aria-label={panel.label}
-              className="w-full overflow-hidden rounded-2xl border border-magenta-neon/15 bg-white bg-no-repeat shadow-[0_10px_28px_rgba(74,18,136,0.10)]"
-              style={{
-                aspectRatio: "2076 / 756",
-                backgroundImage: `url(${offersAssets.hero})`,
-                backgroundPosition: panel.position,
-                backgroundSize: "200% 200%",
-              }}
+              src={panel.src}
+              alt={panel.alt}
+              width={panel.width}
+              height={panel.height}
+              className="h-auto w-full rounded-2xl border border-magenta-neon/15 bg-white shadow-[0_10px_28px_rgba(74,18,136,0.10)]"
+              decoding="async"
             />
           ))}
         </div>

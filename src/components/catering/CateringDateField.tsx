@@ -6,6 +6,8 @@ import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 
 const WEEKDAYS = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"] as const;
+const CALENDAR_WIDTH = 280;
+const CALENDAR_HEIGHT = 320;
 const MONTHS = [
   "Enero",
   "Febrero",
@@ -47,6 +49,22 @@ function buildMonthDays(year: number, month: number) {
   return cells;
 }
 
+function getCalendarScale() {
+  if (typeof window === "undefined") {
+    return 5;
+  }
+
+  if (window.innerWidth < 640) {
+    return Math.min(1.18, Math.max(1, (window.innerWidth - 24) / CALENDAR_WIDTH));
+  }
+
+  if (window.innerWidth < 1024) {
+    return 1.45;
+  }
+
+  return 5;
+}
+
 export function CateringDateField({
   value,
   onChange,
@@ -61,7 +79,7 @@ export function CateringDateField({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
-  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const [position, setPosition] = useState({ top: 0, left: 0, scale: 1 });
   const today = new Date();
   const parsed = value ? new Date(`${value}T00:00:00`) : null;
   const [viewYear, setViewYear] = useState(parsed?.getFullYear() ?? today.getFullYear());
@@ -74,8 +92,9 @@ export function CateringDateField({
 
     const updatePosition = () => {
       const rect = triggerRef.current!.getBoundingClientRect();
-      const scaledWidth = 280 * 5;
-      const scaledHeight = 320 * 5;
+      const scale = getCalendarScale();
+      const scaledWidth = CALENDAR_WIDTH * scale;
+      const scaledHeight = CALENDAR_HEIGHT * scale;
       let left = rect.left + rect.width / 2 - scaledWidth / 2;
       let top = rect.bottom + 8;
 
@@ -84,7 +103,7 @@ export function CateringDateField({
         top = Math.max(8, rect.top - scaledHeight - 8);
       }
 
-      setPosition({ top, left });
+      setPosition({ top, left, scale });
     };
 
     updatePosition();
@@ -132,13 +151,22 @@ export function CateringDateField({
     <div
       ref={popoverRef}
       className="fixed z-[300]"
-      style={{ top: position.top, left: position.left, width: 280 * 5, height: 320 * 5 }}
+      style={{
+        top: position.top,
+        left: position.left,
+        width: CALENDAR_WIDTH * position.scale,
+        height: CALENDAR_HEIGHT * position.scale,
+      }}
       role="dialog"
       aria-label="Seleccionar fecha del evento"
     >
       <div
-        className="h-full w-full origin-top-left scale-[5] rounded-xl border border-black/10 bg-white p-3 shadow-[0_20px_50px_rgba(26,10,20,0.25)]"
-        style={{ width: 280, height: 320 }}
+        className="h-full w-full origin-top-left rounded-xl border border-black/10 bg-white p-3 shadow-[0_20px_50px_rgba(26,10,20,0.25)]"
+        style={{
+          width: CALENDAR_WIDTH,
+          height: CALENDAR_HEIGHT,
+          transform: `scale(${position.scale})`,
+        }}
       >
         <div className="mb-2 flex items-center justify-between">
           <button
